@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:360football.ch)",
+      "WebFetch(domain:linktr.ee)",
+      "Bash(npx create-next-app:*)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -y --defaults)",
+      "Bash(npx shadcn@latest add button card input textarea dialog sheet accordion badge -y)",
+      "Bash(npm run build)",
+      "Bash(timeout:*)",
+      "Bash(cat:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "WebFetch(domain:share.google)",
+      "WebFetch(domain:www.google.com)",
+      "WebSearch",
+      "Bash(git add:*)"
+    ]
+  }
+}

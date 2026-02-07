@@ -1,0 +1,40 @@
+4) Farbpalette (Emotion: Vertrauen, Modernität, Premium)
+Du willst hochwertig wirken, aber nicht „kalt“. Deshalb: warmes Fundament + starke Kontraste + eine klare Akzentfarbe.
+Primärfarben (Brand Base)
+Rolle
+Name
+Hex
+Einsatz
+Background Light
+Warm Sand
+#F3E8D7
+Haupt-Hintergrund (dein Logo-Feeling)
+Primary Text
+Alpine Black
+#0B0B0B
+Headlines, Body, Logo (Light)
+Background Dark
+Deep Night
+#0A0F14
+Dark Mode, Premium Slides, Reels
+Neutral UI
+Stone Grey
+#E7E7E7
+Linien, Cards, Sekundärflächen
+
+Typografie (Saint-Laurent-Feeling, aber praktikabel)
+Du magst den Saint Laurent-Look: elegante, hochkontrastige Serifenschrift in ALL CAPS. Das kopieren wir nicht 1:1, aber wir kommen sehr nah.
+Primärschrift (Headlines)
+Empfehlung: Didot (oder als Google-Alternative: Bodoni Moda)
+ALL CAPS
+Tracking/Letter-spacing: +2 bis +8 (je nach Medium)
+Wenig Zeilen, viel Luft
+Sekundärschrift (Body / UI)
+Empfehlung: Avenir Next (oder Alternative: Inter)
+Sehr gut lesbar, modern, „Swiss clean“
+Für Fliesstext, Buttons, Formulare, Reports
+Typo-Hierarchie (Standard)
+H1: Didot/Bodoni, 42–56 pt (Print) / 32–44 px (Web)
+H2: Didot/Bodoni, 28–36 pt / 22–28 px
+Body: Avenir/Inter, 10.5–12 pt / 16–18 px
+Captions: Avenir/Inter, 9–10 pt / 13–14 px
