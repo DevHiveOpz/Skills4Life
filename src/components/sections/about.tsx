@@ -30,7 +30,7 @@ const values = [
 
 export function AboutSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section id="about" className="py-24 bg-white" ref={ref}>

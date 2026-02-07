@@ -24,7 +24,7 @@ interface ReviewsData {
 
 export function TestimonialsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [reviewsData, setReviewsData] = useState<ReviewsData | null>(null);
   const [isLoading, setIsLoading] = useState(true);

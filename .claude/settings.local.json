@@ -15,7 +15,14 @@
       "WebFetch(domain:share.google)",
       "WebFetch(domain:www.google.com)",
       "WebSearch",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nSkills4Life website - complete implementation\n\n- Hero section with dream client messaging\n- Problem section \\(Kennst du das?\\)\n- How it works \\(4-step process with features\\)\n- Pricing packages \\(Basis, Standard, Intensiv\\)\n- Dynamic testimonials with Google Reviews integration\n- Claude chatbot for lead qualification\n- Booking section with Cal.com integration\n- FAQ section addressing common concerns\n- Impressum and Datenschutz pages\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh repo create:*)",
+      "Bash(where gh:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git config:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

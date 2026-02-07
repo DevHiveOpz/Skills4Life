@@ -53,7 +53,7 @@ const packages = [
 
 export function PricingSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section id="pricing" className="py-24 bg-white" ref={ref}>
