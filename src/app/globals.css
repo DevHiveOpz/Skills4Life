@@ -15,7 +15,7 @@
   --color-alpine-black: #0B0B0B;
   --color-deep-night: #0A0F14;
   --color-stone-grey: #E7E7E7;
-  --color-accent: #C9A86C;
+  --color-accent: #2F3E4E;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -70,8 +70,8 @@
   --secondary-foreground: #0B0B0B;
   --muted: #E7E7E7;
   --muted-foreground: #5A5A5A;
-  --accent: #C9A86C;
-  --accent-foreground: #0B0B0B;
+  --accent: #2F3E4E;
+  --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --border: #D4C4B0;
   --input: #D4C4B0;
@@ -83,12 +83,12 @@
   --chart-5: #9A9A9A;
   --sidebar: #0A0F14;
   --sidebar-foreground: #F3E8D7;
-  --sidebar-primary: #C9A86C;
+  --sidebar-primary: #2F3E4E;
   --sidebar-primary-foreground: #0B0B0B;
   --sidebar-accent: #1A1F24;
   --sidebar-accent-foreground: #F3E8D7;
   --sidebar-border: #2A2F34;
-  --sidebar-ring: #C9A86C;
+  --sidebar-ring: #2F3E4E;
 }
 
 .dark {
@@ -105,25 +105,25 @@
   --secondary-foreground: #F3E8D7;
   --muted: #1A2028;
   --muted-foreground: #A0A0A0;
-  --accent: #C9A86C;
-  --accent-foreground: #0B0B0B;
+  --accent: #2F3E4E;
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --border: #2A3038;
   --input: #2A3038;
-  --ring: #C9A86C;
+  --ring: #2F3E4E;
   --chart-1: #F3E8D7;
   --chart-2: #D4C4B0;
-  --chart-3: #C9A86C;
-  --chart-4: #A08050;
+  --chart-3: #2F3E4E;
+  --chart-4: #1A2530;
   --chart-5: #806040;
   --sidebar: #080C10;
   --sidebar-foreground: #F3E8D7;
-  --sidebar-primary: #C9A86C;
+  --sidebar-primary: #2F3E4E;
   --sidebar-primary-foreground: #0B0B0B;
   --sidebar-accent: #141A20;
   --sidebar-accent-foreground: #F3E8D7;
   --sidebar-border: #2A3038;
-  --sidebar-ring: #C9A86C;
+  --sidebar-ring: #2F3E4E;
 }
 
 @layer base {
@@ -201,15 +201,15 @@
 
 /* Friendly Gradient backgrounds */
 .gradient-hero {
-  background: linear-gradient(135deg, #FFF8F0 0%, #F3E8D7 50%, #E8DCC8 100%);
+  background: linear-gradient(135deg, #F3E8D7 0%, #F3E8D7 50%, #E8DCC8 100%);
 }
 
 .gradient-hero-warm {
-  background: linear-gradient(135deg, #FFFAF5 0%, #FFF0E5 50%, #FFE8D8 100%);
+  background: linear-gradient(135deg, #F3E8D7 0%, #EBE0D0 50%, #E8DCC8 100%);
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #C9A86C 0%, #A08050 100%);
+  background: linear-gradient(135deg, #2F3E4E 0%, #1A2530 100%);
 }
 
 /* Glass effect */

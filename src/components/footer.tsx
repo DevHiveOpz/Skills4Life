@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#FFF8F0] text-[#2D2D2D] border-t border-[#E8DCC8]">
+    <footer className="bg-[#F3E8D7] text-[#2D2D2D] border-t border-[#E8DCC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -38,7 +38,7 @@ export function Footer() {
               <li>
                 <Link
                   href="#about"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   Über uns
                 </Link>
@@ -46,7 +46,7 @@ export function Footer() {
               <li>
                 <Link
                   href="#services"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   Angebot
                 </Link>
@@ -54,7 +54,7 @@ export function Footer() {
               <li>
                 <Link
                   href="#testimonials"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   Erfolgsgeschichten
                 </Link>
@@ -62,17 +62,17 @@ export function Footer() {
               <li>
                 <Link
                   href="#standortbestimmung"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   Standortbestimmung
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#booking"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  href="#standortbestimmung"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors font-semibold"
                 >
-                  Termin buchen
+                  Situation einschätzen
                 </Link>
               </li>
             </ul>
@@ -83,25 +83,25 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-4 text-[#2D2D2D]">Kontakt</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-[#E07B39]" />
+                <Phone size={18} className="text-[#2F3E4E]" />
                 <Link
                   href="tel:+41784053830"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   +41 78 405 38 30
                 </Link>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail size={18} className="text-[#E07B39]" />
+                <Mail size={18} className="text-[#2F3E4E]" />
                 <Link
                   href="mailto:info@skills4life.ch"
-                  className="text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
                   info@skills4life.ch
                 </Link>
               </li>
               <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-[#E07B39] mt-1" />
+                <MapPin size={18} className="text-[#2F3E4E] mt-1" />
                 <span className="text-[#5A5A5A]">Schweiz</span>
               </li>
             </ul>
@@ -114,21 +114,21 @@ export function Footer() {
               <Link
                 href="https://instagram.com/skills4life.stories"
                 target="_blank"
-                className="w-10 h-10 bg-[#FFF0E5] rounded-full flex items-center justify-center hover:bg-[#E07B39] hover:text-white text-[#E07B39] transition-colors"
+                className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >
                 <Instagram size={20} />
               </Link>
               <Link
                 href="https://linkedin.com/in/diego-munizbaez"
                 target="_blank"
-                className="w-10 h-10 bg-[#FFF0E5] rounded-full flex items-center justify-center hover:bg-[#E07B39] hover:text-white text-[#E07B39] transition-colors"
+                className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >
                 <Linkedin size={20} />
               </Link>
               <Link
                 href="https://wa.me/41784053830"
                 target="_blank"
-                className="w-10 h-10 bg-[#FFF0E5] rounded-full flex items-center justify-center hover:bg-[#E07B39] hover:text-white text-[#E07B39] transition-colors"
+                className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >
                 <Phone size={20} />
               </Link>
@@ -138,7 +138,7 @@ export function Footer() {
               <Link
                 href="https://yeelen.ch"
                 target="_blank"
-                className="inline-flex items-center space-x-2 text-[#5A5A5A] hover:text-[#E07B39] transition-colors"
+                className="inline-flex items-center space-x-2 text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
               >
                 <Heart size={16} className="text-red-400" />
                 <span className="text-sm">Unser Spendenprojekt</span>
@@ -155,13 +155,13 @@ export function Footer() {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/datenschutz"
-              className="text-[#5A5A5A] text-sm hover:text-[#E07B39] transition-colors"
+              className="text-[#5A5A5A] text-sm hover:text-[#2F3E4E] transition-colors"
             >
               Datenschutz
             </Link>
             <Link
               href="/impressum"
-              className="text-[#5A5A5A] text-sm hover:text-[#E07B39] transition-colors"
+              className="text-[#5A5A5A] text-sm hover:text-[#2F3E4E] transition-colors"
             >
               Impressum
             </Link>

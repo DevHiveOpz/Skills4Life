@@ -4,19 +4,23 @@ import { motion } from "framer-motion";
 import { MapPin, Monitor, Home } from "lucide-react";
 
 const locations = [
-  { name: "Zurich Oerlikon", type: "location" },
-  { name: "Zurich Enge", type: "location" },
-  { name: "Zurich Altstetten", type: "location" },
-  { name: "Zurich Schwamendingen", type: "location" },
-  { name: "Zurich Wiedikon", type: "location" },
+  { name: "Zürich Höngg", type: "location" },
+  { name: "Zürich Enge", type: "location" },
+  { name: "Zürich Altstetten", type: "location" },
+  { name: "Zürich Schwamendingen", type: "location" },
+  { name: "Zürich Wiedikon", type: "location" },
+  { name: "Zürich Affoltern", type: "location" },
+  { name: "Zürich Seebach", type: "location" },
+  { name: "Zürich Albisrieden", type: "location" },
+  { name: "Wallisellen", type: "location" },
   { name: "Spreitenbach", type: "location" },
   { name: "Regensdorf", type: "location" },
-  { name: "Dietikon", type: "location" },
   { name: "Baden", type: "location" },
+  { name: "Winterthur", type: "location" },
   { name: "Zug", type: "location" },
+  { name: "Rotkreuz", type: "location" },
   { name: "Luzern", type: "location" },
-  { name: "Baar", type: "location" },
-  { name: "Online-Nachhilfe", type: "online" },
+  { name: "Online", type: "online" },
   { name: "Bei dir Zuhause", type: "home" },
 ];
 
@@ -28,11 +32,11 @@ function LocationItem({ name, type }: { name: string; type: string }) {
     <div
       className={`flex items-center space-x-2 px-4 py-2 mx-2 border rounded-full shadow-sm ${
         isSpecial
-          ? "bg-[#E07B39] border-[#E07B39] text-white"
+          ? "bg-[#2F3E4E] border-[#2F3E4E] text-white"
           : "bg-white border-[#E8DCC8] text-[#2D2D2D]"
       }`}
     >
-      <Icon size={14} className={isSpecial ? "text-white" : "text-[#E07B39]"} />
+      <Icon size={14} className={isSpecial ? "text-white" : "text-[#2F3E4E]"} />
       <span className="text-sm font-medium whitespace-nowrap">{name}</span>
     </div>
   );
@@ -46,19 +50,19 @@ export function LocationsBanner() {
   const tripleSecond = [...secondRow, ...secondRow, ...secondRow];
 
   return (
-    <section className="py-8 bg-[#FFF8F0] overflow-hidden border-y border-[#E8DCC8]">
+    <section className="py-8 bg-[#F3E8D7] overflow-hidden border-y border-[#E8DCC8]">
       <div className="text-center mb-6 px-4">
         <h3 className="text-[#2D2D2D] font-bold text-lg mb-1">
-          Nachhilfe in deiner Nahe
+          Begleitung in deiner Nähe
         </h3>
         <p className="text-[#5A5A5A] text-sm">
-          Region Zurich, Zug, Luzern und Umgebung - oder bequem online
+          Region Zürich, Zug, Luzern und Umgebung – oder bequem online
         </p>
       </div>
 
       <div className="relative mb-3">
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FFF8F0] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FFF8F0] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F3E8D7] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F3E8D7] to-transparent z-10" />
 
         <motion.div
           className="flex"
@@ -74,8 +78,8 @@ export function LocationsBanner() {
       </div>
 
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FFF8F0] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FFF8F0] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F3E8D7] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F3E8D7] to-transparent z-10" />
 
         <motion.div
           className="flex"
@@ -93,7 +97,7 @@ export function LocationsBanner() {
 
       <div className="text-center mt-6 px-4">
         <p className="text-[#5A5A5A] text-xs">
-          Kein Standort in deiner Nahe? Kein Problem - wir kommen zu dir oder treffen uns online!
+          Kein Standort in deiner Nähe? Kein Problem – wir kommen zu dir oder treffen uns online!
         </p>
       </div>
     </section>

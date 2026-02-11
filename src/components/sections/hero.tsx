@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Users, Award } from "lucide-react";
 
@@ -9,15 +10,15 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[70vh] flex items-center bg-[#FFF8F0] overflow-hidden"
+      className="relative flex items-center bg-[#F3E8D7] overflow-visible"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E07B39]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E07B39]/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#2F3E4E]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2F3E4E]/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-28">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -37,7 +38,7 @@ export function HeroSection() {
                   <Star
                     key={i}
                     size={14}
-                    className="text-[#E07B39] fill-[#E07B39]"
+                    className="text-[#2F3E4E] fill-[#2F3E4E]"
                   />
                 ))}
               </span>
@@ -47,32 +48,23 @@ export function HeroSection() {
             </motion.div>
 
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-[#2D2D2D] leading-tight mb-6">
-              Schluss mit Hausaufgabenkrieg. Abende ohne Streit.
+              Begleitung statt Nachhilfe. Entlastung statt Stress.
             </h1>
 
             <p className="text-lg md:text-xl text-[#5A5A5A] mb-8 max-w-xl mx-auto lg:mx-0">
-              Strukturierte Lernbegleitung mit fixen Slots, klaren Regeln und sichtbaren Fortschritten – damit zuhause wieder Ruhe einkehrt.
+              Dein Kind scheitert nicht, weil es faul ist – sondern weil ihm niemand gezeigt hat, wie Lernen funktioniert. Wir übernehmen Verantwortung, damit zuhause wieder Ruhe einkehrt.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#E07B39] hover:bg-[#C96A2D] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg transition-all"
+                className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg transition-all"
               >
-                <Link href="#booking" className="flex items-center space-x-2">
-                  <span>Kennenlerngespräch buchen</span>
+                <Link href="#standortbestimmung" className="flex items-center space-x-2">
+                  <span>Die Situation Ihres Kindes einschätzen</span>
                   <ArrowRight size={20} />
                 </Link>
-              </Button>
-
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-2 border-[#E07B39] text-[#E07B39] hover:bg-[#E07B39] hover:text-white rounded-full px-8 py-6 text-lg font-semibold transition-all"
-              >
-                <Link href="#standortbestimmung">Standortbestimmung</Link>
               </Button>
             </div>
 
@@ -85,86 +77,79 @@ export function HeroSection() {
             >
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Users size={20} className="text-[#E07B39]" />
+                  <Users size={20} className="text-[#2F3E4E]" />
                   <span className="text-2xl font-bold text-[#2D2D2D]">100+</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">Schüler begleitet</p>
+                <p className="text-[#5A5A5A] text-sm">Familien entlastet</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Award size={20} className="text-[#E07B39]" />
-                  <span className="text-2xl font-bold text-[#2D2D2D]">98%</span>
+                  <Award size={20} className="text-[#2F3E4E]" />
+                  <span className="text-2xl font-bold text-[#2D2D2D]">7 Tage</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">Erfolgsquote</p>
+                <p className="text-[#5A5A5A] text-sm">bis zum Start</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Star size={20} className="text-[#E07B39]" />
+                  <Star size={20} className="text-[#2F3E4E]" />
                   <span className="text-2xl font-bold text-[#2D2D2D]">5.0</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">Bewertung</p>
+                <p className="text-[#5A5A5A] text-sm">Google Bewertung</p>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Feature Cards */}
+          {/* Right Content - Hero Portrait */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
+            className="relative order-first lg:order-last mb-8 lg:mb-0"
           >
-            <div className="relative">
-              {/* Main Card */}
-              <div className="bg-white rounded-2xl p-8 border border-[#E8DCC8] shadow-xl">
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-[#FFF0E5] flex items-center justify-center flex-shrink-0">
-                      <span className="text-3xl">📅</span>
-                    </div>
-                    <div>
-                      <h3 className="text-[#2D2D2D] font-bold text-lg">
-                        Fixe Slots & klare Regeln
-                      </h3>
-                      <p className="text-[#5A5A5A] text-sm">
-                        Verbindlicher Rahmen, keine Chaos-Flexibilität
-                      </p>
-                    </div>
-                  </div>
+            <div className="relative max-w-sm mx-auto lg:max-w-none">
+              {/* Portrait Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <Image
+                  src="/images/Diego_Muniz_15.JPG"
+                  alt="Diego - Gründer von Skills4Life"
+                  width={500}
+                  height={600}
+                  className="object-cover w-full h-[300px] lg:h-[500px]"
+                  priority
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2F3E4E]/60 via-transparent to-transparent" />
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-[#FFF0E5] flex items-center justify-center flex-shrink-0">
-                      <span className="text-3xl">✅</span>
-                    </div>
-                    <div>
-                      <h3 className="text-[#2D2D2D] font-bold text-lg">
-                        Rückmeldung alle 2 Wochen
-                      </h3>
-                      <p className="text-[#5A5A5A] text-sm">
-                        Sichtbare Fortschritte, keine Blackbox
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-[#FFF0E5] flex items-center justify-center flex-shrink-0">
-                      <span className="text-3xl">🏠</span>
-                    </div>
-                    <div>
-                      <h3 className="text-[#2D2D2D] font-bold text-lg">
-                        Entlastung zuhause
-                      </h3>
-                      <p className="text-[#5A5A5A] text-sm">
-                        Hobby bleibt, Abende gehören der Familie
-                      </p>
-                    </div>
-                  </div>
+                {/* Text Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-lg font-semibold">Diego</p>
+                  <p className="text-white/90 text-sm">Gründer & Lernbegleiter</p>
                 </div>
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 bg-[#E07B39] text-white px-5 py-2 text-sm font-bold rounded-full shadow-lg">
+              <div className="absolute -top-3 -right-3 lg:-top-4 lg:-right-4 bg-[#2F3E4E] text-white px-4 py-1.5 lg:px-5 lg:py-2 text-xs lg:text-sm font-bold rounded-full shadow-lg">
                 Start in 7 Tagen
+              </div>
+
+              {/* Trust Element */}
+              <div className="hidden lg:block absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border border-[#E8DCC8]">
+                <div className="flex items-center space-x-3">
+                  <div className="flex -space-x-2">
+                    {[...Array(3)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 bg-[#EBE0D0] rounded-full border-2 border-white flex items-center justify-center text-xs"
+                      >
+                        {["😊", "👨‍👩‍👧", "⭐"][i]}
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="text-[#2D2D2D] font-semibold text-sm">100+ Familien</p>
+                    <p className="text-[#5A5A5A] text-xs">vertrauen uns</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

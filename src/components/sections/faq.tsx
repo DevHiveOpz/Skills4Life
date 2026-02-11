@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -16,39 +16,34 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "Wie läuft das Kennenlerngespräch ab?",
+    question: "Wie läuft das Erstgespräch ab?",
     answer:
-      "Das Kennenlerngespräch dauert ca. 30 Minuten und ist kostenlos. Wir lernen dich und dein Kind kennen, besprechen die aktuelle Situation und klären, ob wir zusammenpassen. Kein Verkaufsdruck – wir zeigen dir einfach, wie unser System funktioniert.",
+      "Das Erstgespräch dauert ca. 30 Minuten und ist kostenlos. Wir lernen dich und dein Kind kennen, besprechen die aktuelle Situation und klären, ob wir zusammenpassen. Kein Verkaufsdruck – wir zeigen dir einfach, wie unser System funktioniert.",
   },
   {
     question: "Wie schnell kann mein Kind starten?",
     answer:
-      "In der Regel innerhalb von 7–10 Tagen nach dem Kennenlerngespräch. Wir wissen: Wenn die Entscheidung steht, willst du nicht wochenlang warten. Feste Slots werden direkt reserviert.",
+      "In der Regel innerhalb von 7–10 Tagen nach dem Erstgespräch. Wir wissen: Wenn die Entscheidung steht, willst du nicht wochenlang warten. Feste Slots werden direkt reserviert.",
   },
   {
-    question: "Wie erfahre ich, ob mein Kind Fortschritte macht?",
+    question: "Was unterscheidet euch von normaler Nachhilfe?",
     answer:
-      "Alle 2 Wochen erhältst du ein kurzes Update: Was wurde erreicht? Wo stehen wir? Was sind die nächsten Schritte? Keine Blackbox – du weisst immer, wofür du zahlst.",
+      "Nachhilfe erklärt Stoff. Wir bieten Begleitung: Fixe Slots, klare Regeln, strukturierte Abläufe. Dein Kind lernt nicht nur Inhalte – es lernt, wie Lernen funktioniert. Und du bekommst deine Abende zurück.",
   },
   {
-    question: "Was passiert, wenn mein Kind einen Termin verpasst?",
+    question: "Für welche Familien ist das geeignet?",
     answer:
-      "Wir haben klare Regeln: Absagen bis 24h vorher sind kostenlos. Bei kurzfristigen No-Shows wird die Sitzung berechnet. Das klingt streng – aber genau diese Verbindlichkeit macht den Unterschied. Struktur funktioniert nur mit Konsequenz.",
+      "Für Eltern, die nicht mehr alles alleine tragen wollen. Für Kinder zwischen 10 und 15 Jahren, die nicht «faul» sind, sondern einen klaren Rahmen brauchen. Und für Familien, bei denen Lernen regelmässig zu Streit führt.",
+  },
+  {
+    question: "Versprecht ihr bessere Noten?",
+    answer:
+      "Nein. Wir versprechen Verhalten, Struktur und Entlastung – keine Noten. Innerhalb von 3 Monaten: Strukturiertes Lernen an mindestens 4 von 5 Tagen, selbständiges Starten ohne Diskussion, und Eltern raus aus der Lehrerrolle.",
   },
   {
     question: "Kann ich jederzeit kündigen?",
     answer:
       "Ja. Unsere Pakete sind monatlich kündbar mit einer Frist von 14 Tagen zum Monatsende. Keine Knebelverträge, keine versteckten Klauseln. Wenn es nicht passt, trennen wir uns fair.",
-  },
-  {
-    question: "Was unterscheidet euch von normaler Nachhilfe?",
-    answer:
-      "Normale Nachhilfe erklärt Stoff. Wir bauen ein System: Fixe Slots, klare Regeln, strukturierte Abläufe. Dein Kind lernt nicht nur Mathe – es lernt, selbständig zu arbeiten. Und du bekommst deine Abende zurück.",
-  },
-  {
-    question: "Für welche Kinder ist das geeignet?",
-    answer:
-      "Für Kinder zwischen 10 und 15 Jahren, bei denen Hausaufgaben regelmässig eskalieren. Kinder, die nicht «faul» sind, sondern einen klaren Rahmen brauchen. Und Eltern, die Verantwortung abgeben wollen – an ein System, das funktioniert.",
   },
   {
     question: "Bleibt Zeit für Hobbys und Sport?",
@@ -60,6 +55,11 @@ const faqs = [
 export function FAQSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section id="faq" className="py-24 bg-white" ref={ref}>
@@ -71,7 +71,7 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-[#E07B39] font-semibold text-sm mb-4">
+          <span className="inline-block text-[#2F3E4E] font-semibold text-sm mb-4">
             Haufige Fragen
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
@@ -89,26 +89,37 @@ export function FAQSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card className="border border-[#E8DCC8] shadow-lg rounded-2xl">
-            <CardContent className="p-6 md:p-8">
-              <Accordion type="single" collapsible className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border border-[#E8DCC8] rounded-xl px-4 data-[state=open]:bg-[#FFF8F0]"
-                  >
-                    <AccordionTrigger className="text-left font-semibold text-[#2D2D2D] hover:text-[#E07B39] hover:no-underline py-4">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-[#5A5A5A] pb-4">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
+          <div className="border border-[#E8DCC8] shadow-lg rounded-2xl bg-white p-6 md:p-8">
+              {mounted ? (
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="border border-[#E8DCC8] rounded-xl px-4 data-[state=open]:bg-[#F3E8D7] last:border-b"
+                    >
+                      <AccordionTrigger className="text-left font-semibold text-[#2D2D2D] hover:text-[#2F3E4E] hover:no-underline py-4">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[#5A5A5A] pb-4">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              ) : (
+                <div className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <div
+                      key={index}
+                      className="border border-[#E8DCC8] rounded-xl px-4 py-4"
+                    >
+                      <p className="font-semibold text-[#2D2D2D]">{faq.question}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
         </motion.div>
 
         {/* Contact CTA */}
@@ -118,7 +129,7 @@ export function FAQSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Card className="border-none shadow-lg bg-[#E07B39] rounded-2xl">
+          <Card className="border-none shadow-lg bg-[#2F3E4E] rounded-2xl">
             <CardContent className="p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-center md:text-left">
@@ -132,7 +143,7 @@ export function FAQSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white hover:bg-gray-100 text-[#E07B39] rounded-full font-semibold"
+                  className="bg-white hover:bg-gray-100 text-[#2F3E4E] rounded-full font-semibold"
                 >
                   <Link
                     href="#"

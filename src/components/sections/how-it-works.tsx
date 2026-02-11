@@ -12,11 +12,7 @@ import {
   Calendar,
   Users,
   TrendingUp,
-  CheckCircle,
   Clock,
-  BookOpen,
-  Brain,
-  MessageSquare,
 } from "lucide-react";
 
 const steps = [
@@ -54,35 +50,13 @@ const steps = [
   },
 ];
 
-const features = [
-  {
-    icon: Calendar,
-    title: "Fixe Slots & klare Regeln",
-    description: "Verbindlicher Rahmen, keine Chaos-Flexibilität",
-  },
-  {
-    icon: BookOpen,
-    title: "Done-by-Exit Prinzip",
-    description: "Hausaufgaben werden vor Ort erledigt, nicht zuhause",
-  },
-  {
-    icon: Brain,
-    title: "Lernstrategien & Motivation",
-    description: "Dein Kind lernt nicht nur Stoff – es lernt, wie Lernen funktioniert",
-  },
-  {
-    icon: MessageSquare,
-    title: "2-Wochen-Reporting",
-    description: "Klare Fortschritte, transparente Kommunikation, keine Blackbox",
-  },
-];
 
 export function HowItWorksSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="how-it-works" className="py-24 bg-[#FFF8F0]" ref={ref}>
+    <section id="how-it-works" className="py-24 bg-[#F3E8D7]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -91,7 +65,7 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-[#E07B39] font-semibold text-sm mb-4">
+          <span className="inline-block text-[#2F3E4E] font-semibold text-sm mb-4">
             So funktioniert's
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
@@ -124,10 +98,10 @@ export function HowItWorksSection() {
               <Card className="h-full border border-[#E8DCC8] shadow-lg bg-white rounded-2xl relative z-10">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-4xl font-bold text-[#E07B39]">
+                    <span className="text-4xl font-bold text-[#2F3E4E]">
                       {step.number}
                     </span>
-                    <div className="w-12 h-12 bg-[#E07B39] rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#2F3E4E] rounded-xl flex items-center justify-center">
                       <step.icon className="text-white" size={24} />
                     </div>
                   </div>
@@ -140,8 +114,8 @@ export function HowItWorksSection() {
                     {step.description}
                   </p>
 
-                  <div className="inline-block bg-[#FFF0E5] px-3 py-1 rounded-full">
-                    <span className="text-xs font-medium text-[#E07B39]">
+                  <div className="inline-block bg-[#EBE0D0] px-3 py-1 rounded-full">
+                    <span className="text-xs font-medium text-[#2F3E4E]">
                       {step.detail}
                     </span>
                   </div>
@@ -151,45 +125,12 @@ export function HowItWorksSection() {
           ))}
         </div>
 
-        {/* Features Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-12"
-        >
-          <h3 className="font-headline text-2xl text-[#2D2D2D] text-center mb-10">
-            Was du bekommst
-          </h3>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              >
-                <div className="bg-white p-6 rounded-2xl border border-[#E8DCC8] shadow-md h-full">
-                  <div className="w-12 h-12 bg-[#E07B39] rounded-xl flex items-center justify-center mb-4">
-                    <feature.icon className="text-white" size={24} />
-                  </div>
-                  <h4 className="font-bold text-[#2D2D2D] mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="text-[#5A5A5A] text-sm">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-[#E07B39] p-8 md:p-12 rounded-2xl"
+          className="bg-[#2F3E4E] p-8 md:p-12 rounded-2xl"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -204,10 +145,10 @@ export function HowItWorksSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white hover:bg-gray-100 text-[#E07B39] rounded-full"
+                  className="bg-white hover:bg-gray-100 text-[#2F3E4E] rounded-full"
                 >
-                  <Link href="#booking" className="flex items-center space-x-2">
-                    <span>Kennenlerngespräch buchen</span>
+                  <Link href="#standortbestimmung" className="flex items-center space-x-2">
+                    <span>Die Situation Ihres Kindes einschätzen</span>
                     <ArrowRight size={18} />
                   </Link>
                 </Button>

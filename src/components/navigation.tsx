@@ -65,7 +65,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#E07B39] ${
+                className={`text-sm font-medium transition-colors hover:text-[#2F3E4E] ${
                   isScrolled ? "text-[#5A5A5A]" : "text-[#5A5A5A]"
                 }`}
               >
@@ -79,7 +79,7 @@ export function Navigation() {
             <Link
               href="https://instagram.com/skills4life.stories"
               target="_blank"
-              className={`transition-colors hover:text-[#E07B39] ${
+              className={`transition-colors hover:text-[#2F3E4E] ${
                 isScrolled ? "text-[#5A5A5A]" : "text-[#5A5A5A]"
               }`}
             >
@@ -96,9 +96,9 @@ export function Navigation() {
             </Link>
             <Button
               asChild
-              className="bg-[#E07B39] hover:bg-[#C96A2D] text-white rounded-full px-6"
+              className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-6"
             >
-              <Link href="#booking">Jetzt buchen</Link>
+              <Link href="#standortbestimmung">Situation einschätzen</Link>
             </Button>
           </div>
 
@@ -115,7 +115,7 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-[#FFFAF5] border-none w-full sm:w-80"
+              className="bg-[#F3E8D7] border-none w-full sm:w-80"
             >
               <div className="flex flex-col h-full pt-12">
                 <nav className="flex flex-col space-y-6">
@@ -124,7 +124,7 @@ export function Navigation() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-[#2D2D2D] text-2xl font-bold hover:text-[#E07B39] transition-colors"
+                      className="text-[#2D2D2D] text-2xl font-bold hover:text-[#2F3E4E] transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -134,17 +134,17 @@ export function Navigation() {
                 <div className="mt-auto pb-8">
                   <Button
                     asChild
-                    className="w-full bg-[#E07B39] hover:bg-[#C96A2D] text-white rounded-full py-6 text-lg font-semibold"
+                    className="w-full bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full py-6 text-lg font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Link href="#booking">Jetzt buchen</Link>
+                    <Link href="#standortbestimmung">Die Situation Ihres Kindes einschätzen</Link>
                   </Button>
 
                   <div className="flex items-center justify-center space-x-6 mt-8">
                     <Link
                       href="https://instagram.com/skills4life.stories"
                       target="_blank"
-                      className="text-[#E07B39] hover:text-[#C96A2D]"
+                      className="text-[#2F3E4E] hover:text-[#1A2530]"
                     >
                       <Instagram size={24} />
                     </Link>

@@ -86,7 +86,7 @@ export function ChatWidget() {
             exit={{ scale: 0 }}
             onClick={() => setIsOpen(true)}
             data-chat-trigger
-            className="fixed bottom-6 right-6 w-16 h-16 bg-[#E07B39] hover:bg-[#C96A2D] shadow-xl rounded-full flex items-center justify-center z-50 transition-colors overflow-hidden border-4 border-white"
+            className="fixed bottom-6 right-6 w-16 h-16 bg-[#2F3E4E] hover:bg-[#1A2530] shadow-xl rounded-full flex items-center justify-center z-50 transition-colors overflow-hidden border-4 border-white"
           >
             <Image
               src="/images/logo.jpeg"
@@ -109,7 +109,7 @@ export function ChatWidget() {
             className="fixed bottom-6 right-6 w-[90vw] max-w-[400px] h-[500px] bg-white shadow-2xl flex flex-col z-50 overflow-hidden rounded-2xl border border-[#E8DCC8]"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#E07B39] to-[#F59E0B] text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#2F3E4E] to-[#3D4F5F] text-white p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
                   <Image
@@ -138,7 +138,7 @@ export function ChatWidget() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#FFFAF5]">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#F3E8D7]">
               {messages.map((message, index) => (
                 <motion.div
                   key={index}
@@ -151,7 +151,7 @@ export function ChatWidget() {
                   <div
                     className={`max-w-[80%] px-4 py-3 rounded-2xl ${
                       message.role === "user"
-                        ? "bg-[#E07B39] text-white rounded-br-md"
+                        ? "bg-[#2F3E4E] text-white rounded-br-md"
                         : "bg-white text-[#2D2D2D] shadow-sm border border-[#E8DCC8] rounded-bl-md"
                     }`}
                   >
@@ -168,7 +168,7 @@ export function ChatWidget() {
                   className="flex justify-start"
                 >
                   <div className="bg-white text-[#2D2D2D] shadow-sm border border-[#E8DCC8] px-4 py-3 rounded-2xl rounded-bl-md">
-                    <Loader2 size={20} className="animate-spin text-[#E07B39]" />
+                    <Loader2 size={20} className="animate-spin text-[#2F3E4E]" />
                   </div>
                 </motion.div>
               )}
@@ -185,13 +185,13 @@ export function ChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Schreib eine Nachricht..."
-                  className="flex-1 rounded-full border-[#E8DCC8] focus:border-[#E07B39] focus:ring-[#E07B39]"
+                  className="flex-1 rounded-full border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-[#2F3E4E]"
                   disabled={isLoading}
                 />
                 <Button
                   type="submit"
                   disabled={isLoading || !input.trim()}
-                  className="bg-[#E07B39] hover:bg-[#C96A2D] text-white rounded-full w-10 h-10 p-0"
+                  className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full w-10 h-10 p-0"
                 >
                   <Send size={18} />
                 </Button>

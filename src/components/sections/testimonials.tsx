@@ -5,7 +5,8 @@ import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, ChevronLeft, ChevronRight, Quote, Loader2 } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Quote, Loader2, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 interface Review {
@@ -85,7 +86,7 @@ export function TestimonialsSection() {
               height={20}
               className="opacity-80"
             />
-            <span className="text-[#E07B39] font-semibold text-sm">
+            <span className="text-[#2F3E4E] font-semibold text-sm">
               Google Bewertungen
             </span>
           </div>
@@ -101,7 +102,7 @@ export function TestimonialsSection() {
         {/* Loading State */}
         {isLoading && (
           <div className="flex justify-center items-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-[#E07B39]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#2F3E4E]" />
           </div>
         )}
 
@@ -117,7 +118,7 @@ export function TestimonialsSection() {
               >
                 <Card className="border border-[#E8DCC8] shadow-xl bg-white rounded-2xl">
                   <CardContent className="p-8">
-                    <Quote className="text-[#E07B39] mb-4" size={32} />
+                    <Quote className="text-[#2F3E4E] mb-4" size={32} />
 
                     <div className="flex space-x-1 mb-4">
                       {[...Array(reviews[currentIndex]?.rating || 5)].map(
@@ -125,7 +126,7 @@ export function TestimonialsSection() {
                           <Star
                             key={i}
                             size={18}
-                            className="text-[#E07B39] fill-[#E07B39]"
+                            className="text-[#2F3E4E] fill-[#2F3E4E]"
                           />
                         )
                       )}
@@ -137,7 +138,7 @@ export function TestimonialsSection() {
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-[#E07B39] rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <div className="w-10 h-10 bg-[#2F3E4E] rounded-full flex items-center justify-center text-white font-semibold text-sm">
                           {getInitials(reviews[currentIndex]?.author_name || "")}
                         </div>
                         <div>
@@ -158,7 +159,7 @@ export function TestimonialsSection() {
                     variant="outline"
                     size="icon"
                     onClick={prevTestimonial}
-                    className="rounded-full border-[#E07B39] text-[#E07B39]"
+                    className="rounded-full border-[#2F3E4E] text-[#2F3E4E]"
                   >
                     <ChevronLeft size={20} />
                   </Button>
@@ -169,7 +170,7 @@ export function TestimonialsSection() {
                         onClick={() => setCurrentIndex(index)}
                         className={`w-2 h-2 rounded-full transition-colors ${
                           index === currentIndex
-                            ? "bg-[#E07B39]"
+                            ? "bg-[#2F3E4E]"
                             : "bg-[#E8DCC8]"
                         }`}
                       />
@@ -179,7 +180,7 @@ export function TestimonialsSection() {
                     variant="outline"
                     size="icon"
                     onClick={nextTestimonial}
-                    className="rounded-full border-[#E07B39] text-[#E07B39]"
+                    className="rounded-full border-[#2F3E4E] text-[#2F3E4E]"
                   >
                     <ChevronRight size={20} />
                   </Button>
@@ -199,13 +200,13 @@ export function TestimonialsSection() {
                   <Card className="h-full border border-[#E8DCC8] shadow-lg hover:shadow-xl transition-shadow bg-white rounded-2xl">
                     <CardContent className="p-8">
                       <div className="flex items-start justify-between mb-4">
-                        <Quote className="text-[#E07B39]" size={28} />
+                        <Quote className="text-[#2F3E4E]" size={28} />
                         <div className="flex space-x-1">
                           {[...Array(review.rating)].map((_, i) => (
                             <Star
                               key={i}
                               size={16}
-                              className="text-[#E07B39] fill-[#E07B39]"
+                              className="text-[#2F3E4E] fill-[#2F3E4E]"
                             />
                           ))}
                         </div>
@@ -217,7 +218,7 @@ export function TestimonialsSection() {
 
                       <div className="flex items-center justify-between pt-4 border-t border-[#E8DCC8]">
                         <div className="flex items-center space-x-3">
-                          <div className="w-12 h-12 bg-[#E07B39] rounded-full flex items-center justify-center text-white font-semibold">
+                          <div className="w-12 h-12 bg-[#2F3E4E] rounded-full flex items-center justify-center text-white font-semibold">
                             {getInitials(review.author_name)}
                           </div>
                           <div>
@@ -256,7 +257,7 @@ export function TestimonialsSection() {
             href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-6 bg-[#FFF8F0] px-8 py-4 rounded-full shadow-lg border border-[#E8DCC8] hover:shadow-xl transition-shadow"
+            className="inline-flex items-center space-x-6 bg-[#F3E8D7] px-8 py-4 rounded-full shadow-lg border border-[#E8DCC8] hover:shadow-xl transition-shadow"
           >
             <Image
               src="/images/google-logo.svg"
@@ -270,7 +271,7 @@ export function TestimonialsSection() {
                   <Star
                     key={i}
                     size={20}
-                    className="text-[#E07B39] fill-[#E07B39]"
+                    className="text-[#2F3E4E] fill-[#2F3E4E]"
                   />
                 ))}
               </div>
@@ -287,6 +288,23 @@ export function TestimonialsSection() {
               </span>
             </div>
           </a>
+
+          {/* CTA after social proof */}
+          <div className="mt-10">
+            <p className="text-[#2D2D2D] font-medium mb-4">
+              Werde Teil unserer Erfolgsgeschichten
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg"
+            >
+              <Link href="#standortbestimmung" className="flex items-center space-x-2">
+                <span>Die Situation Ihres Kindes einschätzen</span>
+                <ArrowRight size={20} />
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>
