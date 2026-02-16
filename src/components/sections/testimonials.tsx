@@ -300,7 +300,7 @@ export function TestimonialsSection() {
               className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg"
             >
               <Link href="#standortbestimmung" className="flex items-center space-x-2">
-                <span>Die Situation Ihres Kindes einschätzen</span>
+                <span>Situation Ihres Kindes einschätzen</span>
                 <ArrowRight size={20} />
               </Link>
             </Button>

@@ -27,13 +27,15 @@ export default function DatenschutzPage() {
 
             <h2>2. Verantwortliche Stelle</h2>
             <p>
-              Skills4Life
+              Skills4Life D. Mu&ntilde;iz Baez
               <br />
-              Schweiz
+              Goldregenweg 32
+              <br />
+              8050 Z&uuml;rich, Schweiz
               <br />
               Telefon: +41 78 405 38 30
               <br />
-              E-Mail: info@skills4life.ch
+              E-Mail: skills4life.learning@gmail.com
             </p>
 
             <h2>3. Datenerfassung auf unserer Website</h2>
@@ -62,7 +64,7 @@ export default function DatenschutzPage() {
             <h2>5. Kontakt</h2>
             <p>
               Bei Fragen zum Datenschutz konnen Sie uns jederzeit unter
-              info@skills4life.ch kontaktieren.
+              skills4life.learning@gmail.com kontaktieren.
             </p>
           </CardContent>
         </Card>

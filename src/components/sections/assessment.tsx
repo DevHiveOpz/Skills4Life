@@ -102,6 +102,7 @@ export function AssessmentSection() {
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
+  const [datenschutzAccepted, setDatenschutzAccepted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     userType: null,
     name: "",
@@ -162,7 +163,7 @@ export function AssessmentSection() {
       case 9:
         return formData.name.trim() !== "" && isValidEmail(formData.email) && isValidPhone(formData.phone);
       case 10:
-        return true;
+        return datenschutzAccepted;
       default:
         return true;
     }
@@ -752,6 +753,34 @@ export function AssessmentSection() {
               rows={5}
               className="rounded-xl border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-[#2F3E4E]"
             />
+
+            {/* Datenschutz Einwilligung */}
+            <div className="mt-6 p-4 bg-[#F9F5EF] rounded-xl border border-[#E8DCC8]">
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={datenschutzAccepted}
+                  onChange={(e) => setDatenschutzAccepted(e.target.checked)}
+                  className="mt-1 h-5 w-5 rounded border-[#E8DCC8] text-[#2F3E4E] focus:ring-[#2F3E4E] shrink-0 accent-[#2F3E4E]"
+                />
+                <span className="text-sm text-[#5A5A5A] leading-relaxed">
+                  Ich bin damit einverstanden, dass meine Angaben aus diesem Formular
+                  (Name, E-Mail, Telefonnummer sowie die Antworten der Standortbestimmung)
+                  zur Bearbeitung meiner Anfrage erhoben, verarbeitet und per E-Mail an
+                  Skills4Life D. Mu&ntilde;iz Baez uebermittelt werden. Die Daten werden ausschliesslich zur
+                  Kontaktaufnahme und individuellen Beratung verwendet und nicht an Dritte
+                  weitergegeben. Ich kann diese Einwilligung jederzeit per E-Mail an{" "}
+                  <a href="mailto:skills4life.learning@gmail.com" className="text-[#2F3E4E] underline font-medium">
+                    skills4life.learning@gmail.com
+                  </a>{" "}
+                  widerrufen. Es gilt die{" "}
+                  <a href="/datenschutz" target="_blank" className="text-[#2F3E4E] underline font-medium">
+                    Datenschutzerklaerung
+                  </a>
+                  . *
+                </span>
+              </label>
+            </div>
           </motion.div>
         );
 
@@ -792,6 +821,7 @@ export function AssessmentSection() {
                 onClick={() => {
                   setStep(0);
                   setResult(null);
+                  setDatenschutzAccepted(false);
                   setFormData({
                     userType: null,
                     name: "",

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Users, Award } from "lucide-react";
+import { ArrowRight, Star, Users, BookOpen, GraduationCap, Award } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -43,7 +43,7 @@ export function HeroSection() {
                 ))}
               </span>
               <span className="text-[#2D2D2D] text-sm font-medium">
-                5-Sterne Bewertungen
+                5.0 Google Bewertungen
               </span>
             </motion.div>
 
@@ -62,7 +62,7 @@ export function HeroSection() {
                 className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg transition-all"
               >
                 <Link href="#standortbestimmung" className="flex items-center space-x-2">
-                  <span>Die Situation Ihres Kindes einschätzen</span>
+                  <span>Situation Ihres Kindes einschätzen</span>
                   <ArrowRight size={20} />
                 </Link>
               </Button>
@@ -73,28 +73,35 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-[#E8DCC8]"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-[#E8DCC8]"
             >
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Users size={20} className="text-[#2F3E4E]" />
-                  <span className="text-2xl font-bold text-[#2D2D2D]">100+</span>
+                  <BookOpen size={18} className="text-[#2F3E4E]" />
+                  <span className="text-xl font-bold text-[#2D2D2D]">1200+</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">Familien entlastet</p>
+                <p className="text-[#5A5A5A] text-xs">Lektionen unterrichtet</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Award size={20} className="text-[#2F3E4E]" />
-                  <span className="text-2xl font-bold text-[#2D2D2D]">7 Tage</span>
+                  <Users size={18} className="text-[#2F3E4E]" />
+                  <span className="text-xl font-bold text-[#2D2D2D]">53</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">bis zum Start</p>
+                <p className="text-[#5A5A5A] text-xs">Familien begleitet</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
-                  <Star size={20} className="text-[#2F3E4E]" />
-                  <span className="text-2xl font-bold text-[#2D2D2D]">5.0</span>
+                  <GraduationCap size={18} className="text-[#2F3E4E]" />
+                  <span className="text-xl font-bold text-[#2D2D2D]">93%</span>
                 </div>
-                <p className="text-[#5A5A5A] text-sm">Google Bewertung</p>
+                <p className="text-[#5A5A5A] text-xs">Gymi-Erfolgsquote</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
+                  <Award size={18} className="text-[#2F3E4E]" />
+                  <span className="text-xl font-bold text-[#2D2D2D]">100%</span>
+                </div>
+                <p className="text-[#5A5A5A] text-xs">QV/LAP bestanden</p>
               </div>
             </motion.div>
           </motion.div>
@@ -123,33 +130,18 @@ export function HeroSection() {
                 {/* Text Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <p className="text-lg font-semibold">Diego</p>
-                  <p className="text-white/90 text-sm">Gründer & Lernbegleiter</p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <span className="bg-white/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">DaZ/DaF</span>
+                    <span className="bg-white/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">Lerntechniken</span>
+                    <span className="bg-white/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">Gymivorbereitung</span>
+                  </div>
                 </div>
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -top-3 -right-3 lg:-top-4 lg:-right-4 bg-[#2F3E4E] text-white px-4 py-1.5 lg:px-5 lg:py-2 text-xs lg:text-sm font-bold rounded-full shadow-lg">
-                Start in 7 Tagen
               </div>
 
               {/* Trust Element */}
-              <div className="hidden lg:block absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border border-[#E8DCC8]">
-                <div className="flex items-center space-x-3">
-                  <div className="flex -space-x-2">
-                    {[...Array(3)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="w-8 h-8 bg-[#EBE0D0] rounded-full border-2 border-white flex items-center justify-center text-xs"
-                      >
-                        {["😊", "👨‍👩‍👧", "⭐"][i]}
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    <p className="text-[#2D2D2D] font-semibold text-sm">100+ Familien</p>
-                    <p className="text-[#5A5A5A] text-xs">vertrauen uns</p>
-                  </div>
-                </div>
+              <div className="hidden lg:block absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg border border-[#E8DCC8]">
+                <p className="text-[#2D2D2D] font-semibold text-sm">53 Familien</p>
+                <p className="text-[#5A5A5A] text-xs">vertrauen uns</p>
               </div>
             </div>
           </motion.div>

@@ -145,7 +145,7 @@ export function ServicesSection() {
                   href="#standortbestimmung"
                   className="flex items-center space-x-2"
                 >
-                  <span>Die Situation Ihres Kindes einschätzen</span>
+                  <span>Situation Ihres Kindes einschätzen</span>
                   <ArrowRight size={18} />
                 </Link>
               </Button>
@@ -156,9 +156,9 @@ export function ServicesSection() {
                 <div className="flex items-center space-x-4 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
                   <Clock size={48} className="text-white" />
                   <div>
-                    <p className="text-white font-semibold">Start in 7 Tagen</p>
+                    <p className="text-white font-semibold">Schnelle Antwort</p>
                     <p className="text-white/80 text-sm">
-                      Nach dem Erstgespräch
+                      Innerhalb von 24 Stunden
                     </p>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ const steps = [
     title: "Fixe Slots reservieren",
     description:
       "Dein Kind bekommt feste Zeiten. Kein Hin-und-Her, keine Diskussion.",
-    detail: "Start in 7–10 Tagen",
+    detail: "Flexible Terminwahl",
   },
   {
     number: "03",
@@ -148,7 +148,7 @@ export function HowItWorksSection() {
                   className="bg-white hover:bg-gray-100 text-[#2F3E4E] rounded-full"
                 >
                   <Link href="#standortbestimmung" className="flex items-center space-x-2">
-                    <span>Die Situation Ihres Kindes einschätzen</span>
+                    <span>Situation Ihres Kindes einschätzen</span>
                     <ArrowRight size={18} />
                   </Link>
                 </Button>

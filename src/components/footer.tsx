@@ -72,7 +72,7 @@ export function Footer() {
                   href="#standortbestimmung"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors font-semibold"
                 >
-                  Situation einschätzen
+                  Situation Ihres Kindes einschätzen
                 </Link>
               </li>
             </ul>
@@ -94,15 +94,15 @@ export function Footer() {
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-[#2F3E4E]" />
                 <Link
-                  href="mailto:info@skills4life.ch"
+                  href="mailto:skills4life.learning@gmail.com"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  info@skills4life.ch
+                  skills4life.learning@gmail.com
                 </Link>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-[#2F3E4E] mt-1" />
-                <span className="text-[#5A5A5A]">Schweiz</span>
+                <span className="text-[#5A5A5A]">Goldregenweg 32, 8050 Z&uuml;rich</span>
               </li>
             </ul>
           </div>

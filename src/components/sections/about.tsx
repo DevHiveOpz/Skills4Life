@@ -137,7 +137,7 @@ export function AboutSection() {
                 ))}
               </div>
               <p className="text-[#2D2D2D] font-medium">
-                Über 100 Schüler erfolgreich begleitet
+                53 Familien erfolgreich begleitet
               </p>
             </div>
           </motion.div>
@@ -190,7 +190,7 @@ export function AboutSection() {
               className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg"
             >
               <Link href="#standortbestimmung" className="flex items-center space-x-2">
-                <span>Die Situation Ihres Kindes einschätzen</span>
+                <span>Situation Ihres Kindes einschätzen</span>
                 <ArrowRight size={20} />
               </Link>
             </Button>

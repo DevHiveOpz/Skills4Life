@@ -22,9 +22,11 @@ export default function ImpressumPage() {
 
             <h3>Kontaktadresse</h3>
             <p>
-              Skills4Life
+              Skills4Life D. Mu&ntilde;iz Baez
               <br />
-              Diego Munizbaez
+              Goldregenweg 32
+              <br />
+              8050 Z&uuml;rich
               <br />
               Schweiz
             </p>
@@ -33,7 +35,7 @@ export default function ImpressumPage() {
             <p>
               Telefon: +41 78 405 38 30
               <br />
-              E-Mail: info@skills4life.ch
+              E-Mail: skills4life.learning@gmail.com
             </p>
 
             <h3>Social Media</h3>

@@ -45,6 +45,9 @@ apikey.txt
 !postcss.config.json
 !*.config.json
 
+# startup guide (local only)
+STARTUP.md
+
 # vercel
 .vercel
 

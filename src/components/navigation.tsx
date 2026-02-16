@@ -98,7 +98,7 @@ export function Navigation() {
               asChild
               className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-6"
             >
-              <Link href="#standortbestimmung">Situation einschätzen</Link>
+              <Link href="#standortbestimmung">Situation Ihres Kindes einschätzen</Link>
             </Button>
           </div>
 
@@ -137,7 +137,7 @@ export function Navigation() {
                     className="w-full bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full py-6 text-lg font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Link href="#standortbestimmung">Die Situation Ihres Kindes einschätzen</Link>
+                    <Link href="#standortbestimmung">Situation Ihres Kindes einschätzen</Link>
                   </Button>
 
                   <div className="flex items-center justify-center space-x-6 mt-8">
