@@ -69,7 +69,7 @@ export function HowItWorksSection() {
             So funktioniert's
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Ein System – kein Termin
+            In 4 Schritten zur Entlastung
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
             Von der ersten Anfrage bis zum regelmässigen Fortschritt: So läuft

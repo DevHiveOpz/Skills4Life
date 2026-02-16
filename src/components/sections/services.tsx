@@ -60,7 +60,7 @@ export function ServicesSection() {
             Begleitung statt Nachhilfe
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Was du wirklich bekommst
+            Das bekommt deine Familie von uns
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
             Keine Einzelstunden. Kein Stoff-Pauken. Sondern verlässliche Begleitung durch eine schwierige Schulphase – mit System, Struktur und spürbarer Entlastung.

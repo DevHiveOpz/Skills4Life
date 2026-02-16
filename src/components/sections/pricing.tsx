@@ -62,10 +62,10 @@ export function PricingSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#2F3E4E] font-semibold text-sm mb-4">
-            So funktioniert&apos;s
+            Preise & Pakete
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Unsere Pakete
+            Was kostet die Begleitung?
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
             Jede Lektion dauert 45 Minuten. Du w&auml;hlst nur, wie oft pro Woche.

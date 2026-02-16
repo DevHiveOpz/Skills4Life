@@ -91,11 +91,10 @@ export function TestimonialsSection() {
             </span>
           </div>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Was Familien sagen
+            Das sagen Eltern über uns
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Echte Bewertungen von Familien, die mit Skills4Life erfolgreich
-            durch schwierige Schulphasen navigiert haben.
+            Echte Google-Bewertungen von Familien, die wir begleitet haben.
           </p>
         </motion.div>
 

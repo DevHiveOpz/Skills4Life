@@ -72,14 +72,13 @@ export function FAQSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#2F3E4E] font-semibold text-sm mb-4">
-            Haufige Fragen
+            Häufige Fragen
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Alles, was du wissen mochtest
+            Das fragen uns Eltern am häufigsten
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Hier findest du Antworten auf die haufigsten Fragen. Wenn du mehr
-            wissen mochtest, sind wir nur einen Klick entfernt.
+            Hier findest du Antworten auf die wichtigsten Fragen. Falls etwas offen bleibt, schreib uns einfach.
           </p>
         </motion.div>
 

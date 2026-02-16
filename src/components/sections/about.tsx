@@ -48,11 +48,10 @@ export function AboutSection() {
             Über uns
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Vom Zweifel zum Fünfer
+            Ich war selbst dieser Schüler
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Die Geschichte hinter Skills4Life – und warum wir wissen, wie sich
-            Lernschwierigkeiten anfühlen.
+            Die Geschichte hinter Skills4Life – und warum ich genau weiss, wie sich dein Kind fühlt.
           </p>
         </motion.div>
 

@@ -866,13 +866,13 @@ export function AssessmentSection() {
           className="text-center mb-12"
         >
           <span className="inline-block text-[#2F3E4E] font-semibold text-sm mb-4">
-            Persönliche Einschätzung
+            Kostenlose Einschätzung
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Standortbestimmung
+            Wo steht dein Kind gerade?
           </h2>
           <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Nimm dir 2 Minuten. Ich höre zu.
+            Beantworte ein paar kurze Fragen – und ich sage dir ehrlich, wie ich helfen kann.
           </p>
         </motion.div>
 
