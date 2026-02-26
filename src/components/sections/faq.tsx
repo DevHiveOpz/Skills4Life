@@ -18,17 +18,17 @@ const faqs = [
   {
     question: "Wie läuft das Erstgespräch ab?",
     answer:
-      "Das Erstgespräch dauert ca. 30 Minuten und ist kostenlos. Wir lernen dich und dein Kind kennen, besprechen die aktuelle Situation und klären, ob wir zusammenpassen. Kein Verkaufsdruck – wir zeigen dir einfach, wie unser System funktioniert.",
+      "Das Erstgespräch dauert ca. 30 Minuten und ist kostenlos. Wir lernen dich und dein Kind kennen, besprechen die aktuelle Situation und klären, ob wir zusammenpassen. Kein Verkaufsdruck. Wir zeigen dir einfach, wie unser System funktioniert.",
   },
   {
     question: "Wie schnell kann mein Kind starten?",
     answer:
-      "In der Regel innerhalb von 7–10 Tagen nach dem Erstgespräch. Wir wissen: Wenn die Entscheidung steht, willst du nicht wochenlang warten. Feste Slots werden direkt reserviert.",
+      "In der Regel innerhalb von 7 bis 10 Tagen nach dem Erstgespräch. Wir wissen: Wenn die Entscheidung steht, willst du nicht wochenlang warten. Feste Slots werden direkt reserviert.",
   },
   {
     question: "Was unterscheidet euch von normaler Nachhilfe?",
     answer:
-      "Nachhilfe erklärt Stoff. Wir bieten Begleitung: Fixe Slots, klare Regeln, strukturierte Abläufe. Dein Kind lernt nicht nur Inhalte – es lernt, wie Lernen funktioniert. Und du bekommst deine Abende zurück.",
+      "Nachhilfe erklärt Stoff. Wir bieten Begleitung: Fixe Slots, klare Regeln, strukturierte Abläufe. Dein Kind lernt nicht nur Inhalte, es lernt, wie Lernen funktioniert. Und du bekommst deine Abende zurück.",
   },
   {
     question: "Für welche Familien ist das geeignet?",
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "Versprecht ihr bessere Noten?",
     answer:
-      "Nein. Wir versprechen Verhalten, Struktur und Entlastung – keine Noten. Innerhalb von 3 Monaten: Strukturiertes Lernen an mindestens 4 von 5 Tagen, selbständiges Starten ohne Diskussion, und Eltern raus aus der Lehrerrolle.",
+      "Nein. Wir versprechen Verhalten, Struktur und Entlastung, keine Noten. Innerhalb von 3 Monaten: Strukturiertes Lernen an mindestens 4 von 5 Tagen, selbständiges Starten ohne Diskussion, und Eltern raus aus der Lehrerrolle.",
   },
   {
     question: "Kann ich jederzeit kündigen?",
@@ -48,7 +48,7 @@ const faqs = [
   {
     question: "Bleibt Zeit für Hobbys und Sport?",
     answer:
-      "Unbedingt. Wir planen die Slots so, dass Fussball, Tanzen oder Musikunterricht weiterlaufen können. Hobbys sind kein Luxus – sie sind wichtig für die Balance. Das Ziel ist Entlastung, nicht noch mehr Termine.",
+      "Unbedingt. Wir planen die Slots so, dass Fussball, Tanzen oder Musikunterricht weiterlaufen können. Hobbys sind kein Luxus, sie sind wichtig für die Balance. Das Ziel ist Entlastung, nicht noch mehr Termine.",
   },
 ];
 

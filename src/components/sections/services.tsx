@@ -13,13 +13,13 @@ const benefits = [
     icon: Target,
     title: "Verantwortung abgeben",
     description:
-      "Wir übernehmen die Struktur. Du kannst loslassen – und wieder Elternteil sein statt Kontrolleur.",
+      "Wir übernehmen die Struktur. Du kannst loslassen und wieder Elternteil sein statt Kontrolleur.",
   },
   {
     icon: Brain,
     title: "Lerntechniken, die bleiben",
     description:
-      "Dein Kind lernt nicht nur Stoff – es lernt, wie Lernen funktioniert. Das bleibt für immer.",
+      "Dein Kind lernt nicht nur Stoff, es lernt, wie Lernen funktioniert. Das bleibt für immer.",
   },
   {
     icon: Users,
@@ -31,7 +31,7 @@ const benefits = [
     icon: Clock,
     title: "Hobbys bleiben fix",
     description:
-      "Fussball, Tanzen, Freunde – alles bleibt. Wir planen so, dass das Leben nicht zu kurz kommt.",
+      "Fussball, Tanzen, Freunde: alles bleibt. Wir planen so, dass das Leben nicht zu kurz kommt.",
   },
 ];
 
@@ -62,9 +62,6 @@ export function ServicesSection() {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
             Das bekommt deine Familie von uns
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Keine Einzelstunden. Kein Stoff-Pauken. Sondern verlässliche Begleitung durch eine schwierige Schulphase – mit System, Struktur und spürbarer Entlastung.
-          </p>
         </motion.div>
 
         {/* Benefits Grid */}
@@ -107,9 +104,6 @@ export function ServicesSection() {
             <h3 className="font-headline text-2xl text-[#2D2D2D] mb-2">
               Unser Versprechen: Innerhalb von 3 Monaten
             </h3>
-            <p className="text-[#5A5A5A]">
-              Wir versprechen keine Noten. Wir versprechen Verhalten, Struktur und Entlastung.
-            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {outcomes.map((outcome, index) => (

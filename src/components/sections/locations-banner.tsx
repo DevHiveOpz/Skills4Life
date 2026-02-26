@@ -56,7 +56,7 @@ export function LocationsBanner() {
           Begleitung in deiner Nähe
         </h3>
         <p className="text-[#5A5A5A] text-sm">
-          Region Zürich, Zug, Luzern und Umgebung – oder bequem online
+          Region Zürich, Zug, Luzern und Umgebung, oder bequem online
         </p>
       </div>
 
@@ -97,7 +97,7 @@ export function LocationsBanner() {
 
       <div className="text-center mt-6 px-4">
         <p className="text-[#5A5A5A] text-xs">
-          Kein Standort in deiner Nähe? Kein Problem – wir kommen zu dir oder treffen uns online!
+          Kein Standort in deiner Nähe? Kein Problem. Wir kommen zu dir oder treffen uns online!
         </p>
       </div>
     </section>

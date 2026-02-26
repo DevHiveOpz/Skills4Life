@@ -17,7 +17,7 @@ const painPoints = [
   {
     icon: "💔",
     title: "Die Beziehung leidet",
-    description: "Du willst Elternteil sein – nicht Kontrolleur. Aber jeden Abend rutschst du in die Lehrerrolle.",
+    description: "Du willst Elternteil sein, nicht Kontrolleur. Aber jeden Abend rutschst du in die Lehrerrolle.",
   },
   {
     icon: "😤",
@@ -27,7 +27,7 @@ const painPoints = [
   {
     icon: "⚽",
     title: "Hobbys werden gestrichen",
-    description: "Fussball, Tanzen, Freunde – alles wird dem Lernen geopfert. Und trotzdem wird es nicht besser.",
+    description: "Fussball, Tanzen, Freunde: alles wird dem Lernen geopfert. Und trotzdem wird es nicht besser.",
   },
 ];
 
@@ -51,9 +51,6 @@ export function ProblemSection() {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
             Lernen wird zum Familienstress
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Lernen und Schule belasten nicht nur dein Kind – sie belasten die ganze Familie.
-          </p>
         </motion.div>
 
         {/* Pain Points Grid */}
@@ -97,7 +94,7 @@ export function ProblemSection() {
                 «Ich schaffe das nicht mehr allein. Und ich habe Angst, dass ich meinem Kind schade, obwohl ich es gut meine.»
               </p>
               <p className="text-[#5A5A5A] mt-4">
-                — Das denken viele Eltern. Aber sie sagen es nicht laut. Du bist nicht allein.
+                Das denken viele Eltern. Aber sie sagen es nicht laut. Du bist nicht allein.
               </p>
             </CardContent>
           </Card>

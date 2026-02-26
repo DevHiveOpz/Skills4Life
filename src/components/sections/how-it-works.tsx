@@ -21,7 +21,7 @@ const steps = [
     icon: Phone,
     title: "Kennenlerngespräch",
     description:
-      "30 Minuten, kostenlos. Wir klären, ob wir zusammenpassen – ohne Verkaufsdruck.",
+      "30 Minuten, kostenlos. Wir klären, ob wir zusammenpassen, ohne Verkaufsdruck.",
     detail: "Innerhalb von 48h",
   },
   {
@@ -37,7 +37,7 @@ const steps = [
     icon: Users,
     title: "Strukturierte Begleitung",
     description:
-      "Klare Regeln, fester Ablauf. Hausaufgaben werden erledigt – nicht zuhause.",
+      "Klare Regeln, fester Ablauf. Hausaufgaben werden erledigt, nicht zuhause.",
     detail: "Wöchentliche Sitzungen",
   },
   {
@@ -71,10 +71,6 @@ export function HowItWorksSection() {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
             In 4 Schritten zur Entlastung
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Von der ersten Anfrage bis zum regelmässigen Fortschritt: So läuft
-            die Zusammenarbeit.
-          </p>
         </motion.div>
 
         {/* Steps */}

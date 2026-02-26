@@ -244,10 +244,6 @@ export function BookingSection() {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
             Buche dein kostenloses Kennenlerngespräch
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            In 30 Minuten lernen wir uns kennen, besprechen die Situation deines
-            Kindes und finden gemeinsam den besten Weg.
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">

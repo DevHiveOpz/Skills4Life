@@ -48,11 +48,8 @@ export function AboutSection() {
             Über uns
           </span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
-            Ich war selbst dieser Schüler
+            Wir kennen das Gefühl von innen
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Die Geschichte hinter Skills4Life – und warum ich genau weiss, wie sich dein Kind fühlt.
-          </p>
         </motion.div>
 
         {/* Main Content */}
@@ -105,23 +102,17 @@ export function AboutSection() {
                   Ich weiss genau, wie es sich anfühlt, in der Schule zu
                   kämpfen. Ich war selbst der Schüler, der immer hörte: Du bist
                   faul. Du strengst dich nicht genug an. Bis ich verstand: Es
-                  lag nicht an mir – mir fehlte nur die richtige Unterstützung.
+                  lag nicht an mir. Mir fehlte nur die richtige Unterstützung.
                 </p>
               </CardContent>
             </Card>
 
             <p className="text-[#5A5A5A] leading-relaxed">
-              Nach meiner eigenen Schulzeit, in der ich vom frustrierten Schüler
-              zum erfolgreichen Absolventen wurde, habe ich Skills4Life
-              gegründet. Meine Mission: Kein Kind soll sich so fühlen, wie ich
-              mich damals gefühlt habe.
+              Nach dieser Erfahrung haben wir Skills4Life gegründet. Unsere Mission: Kein Kind soll sich so fühlen, wie wir uns damals gefühlt haben.
             </p>
 
             <p className="text-[#5A5A5A] leading-relaxed">
-              Heute begleite ich Schüler und Familien durch schwierige Phasen –
-              mit Geduld, Verständnis und bewährten Methoden. Denn ich weiss:
-              Jedes Kind kann erfolgreich sein, wenn es die richtige Begleitung
-              bekommt.
+              Heute begleiten wir Schüler und Familien durch schwierige Phasen, mit Geduld, Verständnis und bewährten Methoden. Denn wir wissen: Jedes Kind kann erfolgreich sein, wenn es die richtige Begleitung bekommt.
             </p>
 
             <div className="flex items-center space-x-4 pt-4">
@@ -181,7 +172,7 @@ export function AboutSection() {
           {/* CTA */}
           <div className="text-center mt-12">
             <p className="text-[#5A5A5A] mb-6">
-              Lerne mich kennen und erfahre, wie ich deiner Familie helfen kann.
+              Lern uns kennen und erfahre, wie wir deiner Familie helfen können.
             </p>
             <Button
               asChild

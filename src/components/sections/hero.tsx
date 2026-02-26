@@ -1,10 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Users, BookOpen, GraduationCap, Award } from "lucide-react";
+
+function CountUp({ target, suffix = "", duration = 2 }: { target: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+    const steps = duration * 60;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      setCount(Math.round((target * step) / steps));
+      if (step >= steps) clearInterval(timer);
+    }, 1000 / 60);
+    return () => clearInterval(timer);
+  }, [isInView, target, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export function HeroSection() {
   return (
@@ -52,7 +73,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-[#5A5A5A] mb-8 max-w-xl mx-auto lg:mx-0">
-              Dein Kind scheitert nicht, weil es faul ist – sondern weil ihm niemand gezeigt hat, wie Lernen funktioniert. Wir übernehmen Verantwortung, damit zuhause wieder Ruhe einkehrt.
+              Dein Kind scheitert nicht, weil es faul ist, sondern weil ihm niemand gezeigt hat, wie Lernen funktioniert. Wir übernehmen Verantwortung, damit zuhause wieder Ruhe einkehrt.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -78,28 +99,28 @@ export function HeroSection() {
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
                   <BookOpen size={18} className="text-[#2F3E4E]" />
-                  <span className="text-xl font-bold text-[#2D2D2D]">1200+</span>
+                  <span className="text-xl font-bold text-[#2D2D2D]"><CountUp target={1200} suffix="+" duration={2} /></span>
                 </div>
                 <p className="text-[#5A5A5A] text-xs">Lektionen unterrichtet</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
                   <Users size={18} className="text-[#2F3E4E]" />
-                  <span className="text-xl font-bold text-[#2D2D2D]">53</span>
+                  <span className="text-xl font-bold text-[#2D2D2D]"><CountUp target={53} duration={1.5} /></span>
                 </div>
                 <p className="text-[#5A5A5A] text-xs">Familien begleitet</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
                   <GraduationCap size={18} className="text-[#2F3E4E]" />
-                  <span className="text-xl font-bold text-[#2D2D2D]">93%</span>
+                  <span className="text-xl font-bold text-[#2D2D2D]"><CountUp target={93} suffix="%" duration={1.8} /></span>
                 </div>
                 <p className="text-[#5A5A5A] text-xs">Gymi-Erfolgsquote</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
                   <Award size={18} className="text-[#2F3E4E]" />
-                  <span className="text-xl font-bold text-[#2D2D2D]">100%</span>
+                  <span className="text-xl font-bold text-[#2D2D2D]"><CountUp target={100} suffix="%" duration={1.5} /></span>
                 </div>
                 <p className="text-[#5A5A5A] text-xs">QV/LAP bestanden</p>
               </div>

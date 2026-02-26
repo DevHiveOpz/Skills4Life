@@ -194,7 +194,7 @@ export function AssessmentSection() {
 
       // Address diagnostic findings first
       if (needsSupport) {
-        response += `Was du beschreibst, zeigt ein klares Bild: Dein Kind braucht jetzt Unterstützung – nicht irgendwann, sondern jetzt. `;
+        response += `Was du beschreibst, zeigt ein klares Bild: Dein Kind braucht jetzt Unterstützung, nicht irgendwann, sondern jetzt. `;
         if (formData.confidence === "insecure") {
           response += `Dass dein Kind unsicher ist, kommt nicht von ungefähr. Das Selbstvertrauen leidet, wenn man immer wieder das Gefühl hat, nicht mitzukommen. `;
         }
@@ -203,23 +203,23 @@ export function AssessmentSection() {
         }
         response += `Aber: Das lässt sich ändern.\n\n`;
       } else if (moderateSupport) {
-        response += `Die Situation ist noch nicht kritisch – aber sie könnte kippen. Jetzt zu handeln, bevor es eskaliert, ist der klügere Weg.\n\n`;
+        response += `Die Situation ist noch nicht kritisch, aber sie könnte kippen. Jetzt zu handeln, bevor es eskaliert, ist der klügere Weg.\n\n`;
       }
 
       if (formData.homeworkHelp === "often") {
-        response += `Dass du fast täglich helfen musst, zeigt: Das aktuelle System funktioniert nicht. Nicht weil du es falsch machst – sondern weil dein Kind noch nicht gelernt hat, selbständig zu arbeiten. Genau da setzen wir an.\n\n`;
+        response += `Dass du fast täglich helfen musst, zeigt: Das aktuelle System funktioniert nicht. Nicht weil du es falsch machst, sondern weil dein Kind noch nicht gelernt hat, selbständig zu arbeiten. Genau da setzen wir an.\n\n`;
       }
 
       if (struggles.includes("evening-stress") || struggles.includes("relationship")) {
-        response += `Der Stress am Abend, die Diskussionen ums Lernen – das zermürbt. Du willst das Beste für dein Kind, aber irgendwie führt jeder Abend zum gleichen Konflikt. Das ist erschöpfend.\n\n`;
+        response += `Der Stress am Abend, die Diskussionen ums Lernen: das zermürbt. Du willst das Beste für dein Kind, aber irgendwie führt jeder Abend zum gleichen Konflikt. Das ist erschöpfend.\n\n`;
       }
 
       if (struggles.includes("alone")) {
-        response += `Du musst das nicht alleine tragen. Wirklich nicht. Viele Eltern fühlen sich genauso – und keiner spricht darüber. Aber es ist keine Schwäche, Hilfe anzunehmen. Es ist Stärke.\n\n`;
+        response += `Du musst das nicht alleine tragen. Wirklich nicht. Viele Eltern fühlen sich genauso, und keiner spricht darüber. Aber es ist keine Schwäche, Hilfe anzunehmen. Es ist Stärke.\n\n`;
       }
 
       if (struggles.includes("teacher-role")) {
-        response += `Du bist Mutter/Vater – nicht Lehrer. Dass du diese Rollen nicht mehr vermischen willst, ist absolut nachvollziehbar. Dein Kind braucht dich als Elternteil, nicht als Kontrolleur.\n\n`;
+        response += `Du bist Mutter/Vater, nicht Lehrer. Dass du diese Rollen nicht mehr vermischen willst, ist absolut nachvollziehbar. Dein Kind braucht dich als Elternteil, nicht als Kontrolleur.\n\n`;
       }
 
       if (struggles.includes("motivation")) {
@@ -227,10 +227,10 @@ export function AssessmentSection() {
       }
 
       if (formData.enjoysLearning === "no") {
-        response += `Dass dein Kind keine Freude am Lernen hat, ist ein Symptom – nicht die Ursache. Wenn Lernen nur mit Frust verbunden ist, verliert man die Motivation. Wir können das umdrehen.\n\n`;
+        response += `Dass dein Kind keine Freude am Lernen hat, ist ein Symptom, nicht die Ursache. Wenn Lernen nur mit Frust verbunden ist, verliert man die Motivation. Wir können das umdrehen.\n\n`;
       }
 
-      response += `Bei ${subjects} können wir gezielt unterstützen – mit Struktur, Lerntechniken und ohne den täglichen Kampf zuhause.\n\n`;
+      response += `Bei ${subjects} können wir gezielt unterstützen, mit Struktur, Lerntechniken und ohne den täglichen Kampf zuhause.\n\n`;
       response += `Mein Vorschlag: Lass uns in einem kostenlosen Erstgespräch herausfinden, wie wir euch konkret entlasten können. Ganz ohne Druck, ganz ohne Verkauf. Einfach ein ehrliches Gespräch.`;
 
       return response;
@@ -239,15 +239,15 @@ export function AssessmentSection() {
 
       // Address diagnostic findings for child
       if (formData.happyWithGrades === "no") {
-        response += `Du bist nicht zufrieden mit deinen Noten – das nervt, ich weiss. Aber Noten sagen nicht aus, wie schlau du bist. Sie sagen nur, ob du gerade weisst, wie man lernt. Und das kann man ändern.\n\n`;
+        response += `Du bist nicht zufrieden mit deinen Noten, das nervt, wir wissen das. Aber Noten sagen nicht aus, wie schlau du bist. Sie sagen nur, ob du gerade weisst, wie man lernt. Und das kann man ändern.\n\n`;
       }
 
       if (formData.confidence === "insecure") {
-        response += `Dass du dich unsicher fühlst in der Schule – das ist hart. Aber weisst du was? Die meisten, die so fühlen, sind nicht dümmer als andere. Sie haben nur noch nicht den richtigen Weg gefunden. Und genau dabei kann ich helfen.\n\n`;
+        response += `Dass du dich unsicher fühlst in der Schule, das ist hart. Aber weisst du was? Die meisten, die so fühlen, sind nicht dümmer als andere. Sie haben nur noch nicht den richtigen Weg gefunden. Und genau dabei können wir helfen.\n\n`;
       }
 
       if (struggles.includes("dont-understand")) {
-        response += `Wenn alle anderen es zu verstehen scheinen und du sitzt da und denkst: "Was ist falsch mit mir?" – nichts ist falsch mit dir. Manchmal braucht man einfach jemanden, der es anders erklärt.\n\n`;
+        response += `Wenn alle anderen es zu verstehen scheinen und du sitzt da und denkst: "Was ist falsch mit mir?" Nichts ist falsch mit dir. Manchmal braucht man einfach jemanden, der es anders erklärt.\n\n`;
       }
 
       if (struggles.includes("no-motivation")) {
@@ -255,23 +255,23 @@ export function AssessmentSection() {
       }
 
       if (struggles.includes("overwhelmed")) {
-        response += `Wenn sich alles wie ein Berg anfühlt, den man nie schaffen kann – das kenne ich. Aber man muss nicht den ganzen Berg auf einmal bezwingen. Schritt für Schritt. Und mit jemandem an der Seite geht's leichter.\n\n`;
+        response += `Wenn sich alles wie ein Berg anfühlt, den man nie schaffen kann: das kennen wir. Aber man muss nicht den ganzen Berg auf einmal bezwingen. Schritt für Schritt. Und mit jemandem an der Seite geht's leichter.\n\n`;
       }
 
       if (struggles.includes("parents-angry")) {
-        response += `Wenn zuhause die Stimmung kippt, sobald es ums Lernen geht – das ist hart. Deine Eltern wollen nur das Beste für dich, aber manchmal drücken sie es falsch aus. Das können wir ändern.\n\n`;
+        response += `Wenn zuhause die Stimmung kippt, sobald es ums Lernen geht, das ist hart. Deine Eltern wollen nur das Beste für dich, aber manchmal drücken sie es falsch aus. Das können wir ändern.\n\n`;
       }
 
       if (struggles.includes("no-time")) {
-        response += `Deine Hobbys sind wichtig – Fussball, Freunde, was auch immer. Das soll nicht wegfallen. Wir finden einen Weg, dass beides funktioniert.\n\n`;
+        response += `Deine Hobbys sind wichtig: Fussball, Freunde, was auch immer. Das soll nicht wegfallen. Wir finden einen Weg, dass beides funktioniert.\n\n`;
       }
 
       if (struggles.includes("fear-tests")) {
-        response += `Prüfungsangst ist echt – und du bist nicht der einzige. Aber mit den richtigen Techniken und etwas Übung wird das besser. Versprochen.\n\n`;
+        response += `Prüfungsangst ist echt, und du bist nicht der einzige. Aber mit den richtigen Techniken und etwas Übung wird das besser. Versprochen.\n\n`;
       }
 
-      response += `Bei ${subjects} kann ich dir helfen – aber nicht wie ein Lehrer, der nur Stoff reindrückt. Sondern so, dass du verstehst, WIE du am besten lernst. Das ist ein Gamechanger.\n\n`;
-      response += `Sag deinen Eltern, dass ihr euch gerne bei mir melden könnt. Kein Stress, kein Druck – einfach mal reden.`;
+      response += `Bei ${subjects} können wir dir helfen, aber nicht wie ein Lehrer, der nur Stoff reindrückt. Sondern so, dass du verstehst, WIE du am besten lernst. Das ist ein Gamechanger.\n\n`;
+      response += `Sag deinen Eltern, dass ihr euch gerne bei uns melden könnt. Kein Stress, kein Druck, einfach mal reden.`;
 
       return response;
     }
@@ -327,7 +327,7 @@ export function AssessmentSection() {
               Lass uns gemeinsam schauen
             </h3>
             <p className="text-[#5A5A5A] mb-8 max-w-md mx-auto">
-              In wenigen Minuten verstehe ich eure Situation besser und kann euch eine ehrliche Einschätzung geben.
+              In wenigen Minuten verstehen wir eure Situation besser und können euch eine ehrliche Einschätzung geben.
             </p>
             <Button
               onClick={() => setStep(1)}
@@ -353,7 +353,7 @@ export function AssessmentSection() {
                 Wer bist du?
               </h3>
               <p className="text-[#5A5A5A]">
-                Damit ich dich richtig ansprechen kann
+                Damit wir dich richtig ansprechen können
               </p>
             </div>
 
@@ -633,7 +633,7 @@ export function AssessmentSection() {
                 }
               </h3>
               <p className="text-sm text-[#5A5A5A]">
-                Sei ehrlich – hier urteilt niemand
+                Sei ehrlich, hier urteilt niemand
               </p>
             </div>
 
@@ -666,7 +666,7 @@ export function AssessmentSection() {
           >
             <div className="text-center mb-6">
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
-                Fast geschafft – wie erreichen wir dich?
+                Fast geschafft. Wie erreichen wir dich?
               </h3>
               <p className="text-sm text-[#5A5A5A]">
                 Damit wir dir deine persönliche Einschätzung senden können
@@ -734,12 +734,12 @@ export function AssessmentSection() {
             <div className="text-center mb-6">
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
-                  ? "Möchtest du mir noch etwas mitteilen?"
-                  : "Willst du mir noch was sagen?"
+                  ? "Möchtest du uns noch etwas mitteilen?"
+                  : "Willst du uns noch was sagen?"
                 }
               </h3>
               <p className="text-sm text-[#5A5A5A]">
-                Optional – aber hilft mir, euch besser zu verstehen
+                Optional, aber hilft uns, euch besser zu verstehen
               </p>
             </div>
 
@@ -871,9 +871,6 @@ export function AssessmentSection() {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] mb-6">
             Wo steht dein Kind gerade?
           </h2>
-          <p className="text-lg text-[#5A5A5A] max-w-2xl mx-auto">
-            Beantworte ein paar kurze Fragen – und ich sage dir ehrlich, wie ich helfen kann.
-          </p>
         </motion.div>
 
         <motion.div
