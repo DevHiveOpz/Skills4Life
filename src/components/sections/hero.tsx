@@ -68,8 +68,10 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-[#2D2D2D] leading-tight mb-6">
-              Begleitung statt Nachhilfe. Entlastung statt Stress.
+            <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#2D2D2D] leading-tight mb-6">
+              Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen.
+              <br />
+              Wir entdecken die Stärken Ihres Kindes und bauen darauf Erfolge auf.
             </h1>
 
             <p className="text-lg md:text-xl text-[#5A5A5A] mb-8 max-w-xl mx-auto lg:mx-0">
