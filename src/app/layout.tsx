@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ChatWidget } from "@/components/chat-widget";
+import { HideOnEntry } from "@/components/hide-on-entry";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -12,22 +13,22 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Skills4Life | Nachhilfe die wirkt",
+  title: "Skills4Life | Believe in yourself",
   description:
-    "Wir begleiten Kinder und Jugendliche durch schwierige Schulphasen, damit Lernen gelingt und Familien wieder aufatmen.",
+    "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen. Für Familien, Schulen und Vereine.",
   keywords: [
-    "Nachhilfe",
+    "Selbstvertrauen",
+    "Stärken",
     "Lernbegleitung",
-    "Schulhilfe",
-    "Prufungsvorbereitung",
+    "Kinder",
     "Skills4Life",
-    "Schweiz",
+    "Zürich",
   ],
   authors: [{ name: "Skills4Life" }],
   openGraph: {
-    title: "Skills4Life | Nachhilfe die wirkt",
+    title: "Skills4Life | Believe in yourself",
     description:
-      "Wir begleiten Kinder und Jugendliche durch schwierige Schulphasen, damit Lernen gelingt und Familien wieder aufatmen.",
+      "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen.",
     type: "website",
     locale: "de_CH",
   },
@@ -43,10 +44,14 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} font-sans antialiased`}
       >
-        <Navigation />
+        <HideOnEntry>
+          <Navigation />
+        </HideOnEntry>
         <main className="min-h-screen">{children}</main>
-        <Footer />
-        <ChatWidget />
+        <HideOnEntry>
+          <Footer />
+          <ChatWidget />
+        </HideOnEntry>
       </body>
     </html>
   );

@@ -145,6 +145,12 @@
   font-weight: 800;
 }
 
+/* Wordmark of the logo (clean grotesque like the original logo) */
+.font-logo {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
 .font-body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "@/components/logo";
 import { Instagram, Linkedin, Phone, Mail, MapPin, Heart } from "lucide-react";
 
 export function Footer() {
@@ -13,21 +13,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Skills4Life Logo"
-                width={48}
-                height={48}
-                className="object-contain rounded-xl"
-              />
-              <span className="font-bold text-xl text-[#2D2D2D]">
-                Skills4Life
-              </span>
-            </div>
+            <Logo />
             <p className="text-[#5A5A5A] text-sm leading-relaxed">
-              Wir begleiten Kinder und Jugendliche durch schwierige Schulphasen,
-              damit Lernen gelingt und Familien wieder aufatmen.
+              Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in
+              den Mittelpunkt stellen.
             </p>
           </div>
 
@@ -37,39 +26,28 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#about"
+                  href="/familien"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Über uns
-                </Link>
+                  Familien</Link>
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/schulen"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Angebot
-                </Link>
+                  Schulen</Link>
               </li>
               <li>
                 <Link
-                  href="#testimonials"
+                  href="/vereine"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Erfolgsgeschichten
-                </Link>
+                  Vereine</Link>
               </li>
               <li>
                 <Link
-                  href="#standortbestimmung"
-                  className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
-                >
-                  Standortbestimmung
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#standortbestimmung"
+                  href="/familien#standortbestimmung"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors font-semibold"
                 >
                   Situation Ihres Kindes einschätzen

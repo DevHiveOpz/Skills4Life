@@ -37,7 +37,7 @@ export function FloatingCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-t from-[#F3E8D7] via-[#F3E8D7]/95 to-transparent md:hidden"
+          className="fixed bottom-0 left-0 right-0 z-40 p-4 pr-24 bg-gradient-to-t from-[#F3E8D7] via-[#F3E8D7]/95 to-transparent md:hidden"
         >
           <Button
             asChild
@@ -45,7 +45,7 @@ export function FloatingCTA() {
             className="w-full bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full py-6 text-lg font-semibold shadow-xl"
           >
             <Link href="#standortbestimmung" className="flex items-center justify-center space-x-2">
-              <span>Situation Ihres Kindes einschätzen</span>
+              <span>Situation einschätzen</span>
               <ArrowRight size={20} />
             </Link>
           </Button>

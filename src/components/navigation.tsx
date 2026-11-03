@@ -2,24 +2,27 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, Phone, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Logo } from "@/components/logo";
 
-const navItems = [
-  { href: "#hero", label: "Start" },
-  { href: "#about", label: "Über uns" },
-  { href: "#how-it-works", label: "So funktioniert's" },
-  { href: "#pricing", label: "Preise" },
-  { href: "#testimonials", label: "Erfolgsgeschichten" },
-  { href: "#faq", label: "FAQ" },
+const familienNavItems = [
+  { href: "/familien#ansatz", label: "Unser Ansatz" },
+  { href: "/familien#geschichte", label: "Geschichte" },
+  { href: "/familien#about", label: "Über uns" },
 ];
+
+const ctaHref = "/familien#standortbestimmung";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  // Menu entries only exist on the Familien page for now
+  const navItems = pathname.startsWith("/familien") ? familienNavItems : [];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,21 +45,8 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <Image
-              src="/images/logo.jpeg"
-              alt="Skills4Life Logo"
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-            <span
-              className={`font-bold text-xl transition-colors ${
-                isScrolled ? "text-[#2D2D2D]" : "text-[#2D2D2D]"
-              }`}
-            >
-              Skills4Life
-            </span>
+          <Link href="/" aria-label="Skills4Life Startseite">
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}
@@ -94,12 +84,14 @@ export function Navigation() {
             >
               <Linkedin size={20} />
             </Link>
-            <Button
-              asChild
-              className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-6"
-            >
-              <Link href="#standortbestimmung">Situation Ihres Kindes einschätzen</Link>
-            </Button>
+            {navItems.length > 0 && (
+              <Button
+                asChild
+                className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-6"
+              >
+                <Link href={ctaHref}>Situation Ihres Kindes einschätzen</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu */}
@@ -137,7 +129,9 @@ export function Navigation() {
                     className="w-full bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full py-6 text-lg font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Link href="#standortbestimmung">Situation Ihres Kindes einschätzen</Link>
+                    <Link href={navItems.length > 0 ? ctaHref : "/"}>
+                      {navItems.length > 0 ? "Situation Ihres Kindes einschätzen" : "Zur Auswahl"}
+                    </Link>
                   </Button>
 
                   <div className="flex items-center justify-center space-x-6 mt-8">
