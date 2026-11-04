@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Menu, Phone, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/ui/logo";
 
 const familienNavItems = [
   { href: "/familien#ansatz", label: "Unser Ansatz" },
@@ -46,7 +46,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" aria-label="Skills4Life Startseite">
-            <Logo />
+            <Logo className="text-xl" />
           </Link>
 
           {/* Desktop Navigation */}

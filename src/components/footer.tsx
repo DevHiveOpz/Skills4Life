@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/ui/logo";
 import { Instagram, Linkedin, Phone, Mail, MapPin, Heart } from "lucide-react";
 
 export function Footer() {
@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Logo />
+            <Logo className="text-xl" />
             <p className="text-[#5A5A5A] text-sm leading-relaxed">
               Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in
               den Mittelpunkt stellen.

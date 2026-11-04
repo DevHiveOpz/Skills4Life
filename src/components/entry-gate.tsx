@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, School, Trophy } from "lucide-react";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/ui/logo";
 
 const audiences = [
   {
@@ -55,7 +55,6 @@ export function EntryGate() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
         <Logo
-          variant="stacked"
           className="text-[13vw] sm:text-7xl md:text-8xl"
         />
       </motion.div>
