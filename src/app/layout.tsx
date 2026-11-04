@@ -6,6 +6,9 @@ import { Footer } from "@/components/footer";
 import { ChatWidget } from "@/components/chat-widget";
 import { HideOnEntry } from "@/components/hide-on-entry";
 import { Analytics } from "@/components/analytics/analytics";
+import { StructuredData } from "@/components/seo/structured-data";
+import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -15,25 +18,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Skills4Life | Stärken entdecken, Selbstvertrauen aufbauen",
-  description:
-    "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen. Für Familien, Schulen und Vereine.",
-  keywords: [
-    "Selbstvertrauen",
-    "Stärken",
-    "Lernbegleitung",
-    "Kinder",
-    "Skills4Life",
-    "Zürich",
-  ],
-  authors: [{ name: "Skills4Life" }],
-  openGraph: {
+  metadataBase: new URL(site.url),
+  applicationName: site.name,
+  ...pageMetadata({
     title: "Skills4Life | Stärken entdecken, Selbstvertrauen aufbauen",
-    description:
-      "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen.",
-    type: "website",
-    locale: "de_CH",
-  },
+    description: site.description,
+    path: "/",
+  }),
 };
 
 export default function RootLayout({
@@ -53,6 +44,7 @@ export default function RootLayout({
           <ChatWidget />
         </HideOnEntry>
         <Analytics />
+        <StructuredData />
       </body>
     </html>
   );

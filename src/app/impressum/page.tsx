@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Impressum | Skills4Life",
-  description: "Impressum von Skills4Life",
-};
+  description:
+    "Impressum von Skills4Life, Lernbegleitung in Zürich: Kontaktadresse, Telefon und E-Mail.",
+  path: "/impressum",
+});
 
 export default function ImpressumPage() {
   return (

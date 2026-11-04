@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { FamilienHero } from "@/components/familien/hero";
 import { FamilienRecognition } from "@/components/familien/recognition";
 import { FamilienApproach } from "@/components/familien/approach";
@@ -8,11 +9,12 @@ import { AssessmentSection } from "@/components/sections/assessment";
 import { BookingSection } from "@/components/sections/booking";
 import { FloatingCTA } from "@/components/floating-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Skills4Life für Familien | Stärken und Selbstvertrauen",
   description:
     "Wir entdecken die Stärken Ihres Kindes und bauen darauf Erfolge auf. So wächst Selbstvertrauen, und zuhause kehrt wieder Ruhe ein.",
-};
+  path: "/familien",
+});
 
 export default function FamilienPage() {
   return (
