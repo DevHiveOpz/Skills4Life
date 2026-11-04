@@ -70,6 +70,7 @@
   --spacing-step: var(--size-step);
   --spacing-stage-dot: var(--size-stage-dot);
   --spacing-logo: var(--size-logo-min);
+  --spacing-header: var(--size-header);
 
   --container-page: var(--container-max);
 
@@ -126,7 +127,7 @@
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: var(--size-header);
   }
   @media (prefers-reduced-motion: reduce) {
     html {
