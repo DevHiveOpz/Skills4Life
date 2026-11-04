@@ -45,7 +45,7 @@ function generateTimeSlots(date: Date): { start: Date; end: Date }[] {
 
 function isSlotAvailable(
   slot: { start: Date; end: Date },
-  busyPeriods: { start: string; end: string }[]
+  busyPeriods: { start: string; end: string }[],
 ): boolean {
   for (const busy of busyPeriods) {
     const busyStart = new Date(busy.start);
@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
     if (!dateParam) {
       return NextResponse.json(
         { error: "Date parameter is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -115,7 +115,7 @@ export async function GET(request: NextRequest) {
 
       return isSlotAvailable(
         slot,
-        busyPeriods as { start: string; end: string }[]
+        busyPeriods as { start: string; end: string }[],
       );
     });
 
@@ -135,7 +135,7 @@ export async function GET(request: NextRequest) {
     console.error("Calendar API error:", error);
     return NextResponse.json(
       { error: "Failed to fetch available slots" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

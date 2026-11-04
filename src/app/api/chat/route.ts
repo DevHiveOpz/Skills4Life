@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
           message:
             "Der Chat ist momentan nicht verfügbar. Bitte kontaktiere uns direkt unter +41 78 405 38 30.",
         },
-        { status: 200 }
+        { status: 200 },
       );
     }
 
@@ -88,7 +88,10 @@ export async function POST(req: NextRequest) {
     });
 
     const textContent = response.content.find((block) => block.type === "text");
-    const messageText = textContent && "text" in textContent ? textContent.text : "Entschuldigung, ich konnte keine Antwort generieren.";
+    const messageText =
+      textContent && "text" in textContent
+        ? textContent.text
+        : "Entschuldigung, ich konnte keine Antwort generieren.";
 
     return NextResponse.json({ message: messageText });
   } catch (error) {
@@ -98,7 +101,7 @@ export async function POST(req: NextRequest) {
         message:
           "Es tut mir leid, es gab ein technisches Problem. Bitte versuche es später erneut oder kontaktiere uns direkt unter +41 78 405 38 30.",
       },
-      { status: 200 }
+      { status: 200 },
     );
   }
 }

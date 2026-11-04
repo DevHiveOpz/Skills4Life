@@ -60,7 +60,11 @@ export async function GET() {
     const data: PlacesAPIResponse = await response.json();
 
     if (data.status !== "OK") {
-      console.error("Google Places API error:", data.status, data.error_message);
+      console.error(
+        "Google Places API error:",
+        data.status,
+        data.error_message,
+      );
       return NextResponse.json({
         reviews: getFallbackReviews(),
         rating: 5.0,

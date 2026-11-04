@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     if (!name || !email || !phone) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -82,11 +82,16 @@ export async function POST(request: NextRequest) {
       "no-time": "Keine Zeit für Hobbys",
     };
 
-    const strugglesLabels = userType === "parent" ? parentStrugglesLabels : childStrugglesLabels;
+    const strugglesLabels =
+      userType === "parent" ? parentStrugglesLabels : childStrugglesLabels;
 
     // Format the data for email
-    const formattedSubjects = subjects?.map((s: string) => subjectLabels[s] || s).join(", ") || "Keine angegeben";
-    const formattedStruggles = struggles?.map((s: string) => strugglesLabels[s] || s).join(", ") || "Keine angegeben";
+    const formattedSubjects =
+      subjects?.map((s: string) => subjectLabels[s] || s).join(", ") ||
+      "Keine angegeben";
+    const formattedStruggles =
+      struggles?.map((s: string) => strugglesLabels[s] || s).join(", ") ||
+      "Keine angegeben";
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -117,12 +122,16 @@ export async function POST(request: NextRequest) {
             <p style="margin: 5px 0;">${formattedStruggles}</p>
           </div>
 
-          ${feelings ? `
+          ${
+            feelings
+              ? `
           <h2 style="color: #2D2D2D;">Persönliche Nachricht</h2>
           <div style="background-color: white; padding: 20px; border-radius: 10px;">
             <p style="margin: 0; white-space: pre-wrap;">${feelings}</p>
           </div>
-          ` : ""}
+          `
+              : ""
+          }
         </div>
         <div style="padding: 20px; text-align: center; background-color: #2F3E4E;">
           <a href="tel:${phone}" style="display: inline-block; background-color: white; color: #2F3E4E; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 5px;">
@@ -162,9 +171,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Lead API error:", error);
-    return NextResponse.json(
-      { error: "Failed to save lead" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to save lead" }, { status: 500 });
   }
 }

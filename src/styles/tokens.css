@@ -6,19 +6,19 @@
 
 :root {
   /* Farben */
-  --color-bg: #F0E7D8;
-  --color-surface: #FAF6EF;
-  --color-surface-muted: #E2D8C8;
-  --color-primary: #323E4D;
-  --color-primary-hover: #26303C;
-  --color-on-primary: #FAF6EF;
-  --color-text: #1A1A1A;
-  --color-text-muted: #5A5A5A;
-  --color-border: #E2D8C8;
-  --color-success: #2D6A4F;
-  --color-spark: #C9A44C;
-  --color-focus: #323E4D;
-  --color-white: #FFFFFF;
+  --color-bg: #f0e7d8;
+  --color-surface: #faf6ef;
+  --color-surface-muted: #e2d8c8;
+  --color-primary: #323e4d;
+  --color-primary-hover: #26303c;
+  --color-on-primary: #faf6ef;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5a5a;
+  --color-border: #e2d8c8;
+  --color-success: #2d6a4f;
+  --color-spark: #c9a44c;
+  --color-focus: #323e4d;
+  --color-white: #ffffff;
 
   /* Schrift: --font-nunito wird von next/font in src/app/layout.tsx gesetzt */
   --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
@@ -52,7 +52,7 @@
 
   /* Schatten */
   --shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.08);
-  --shadow-cta: 0 4px 12px rgba(50, 62, 77, 0.20);
+  --shadow-cta: 0 4px 12px rgba(50, 62, 77, 0.2);
 
   /* Breiten und feste Grössen */
   --container-max: 1200px;

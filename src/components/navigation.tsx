@@ -37,9 +37,7 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,6 +66,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="https://instagram.com/skills4life.stories"
+              aria-label="Skills4Life auf Instagram"
               target="_blank"
               className={`transition-colors hover:text-[#2F3E4E] ${
                 isScrolled ? "text-[#5A5A5A]" : "text-[#5A5A5A]"
@@ -77,6 +76,7 @@ export function Navigation() {
             </Link>
             <Link
               href="https://linkedin.com/in/diego-munizbaez"
+              aria-label="Diego auf LinkedIn"
               target="_blank"
               className={`transition-colors hover:text-[#4A9B7F] ${
                 isScrolled ? "text-[#5A5A5A]" : "text-[#5A5A5A]"
@@ -100,6 +100,7 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 size="icon"
+                aria-label="Menü öffnen"
                 className="text-[#2D2D2D]"
               >
                 <Menu size={24} />
@@ -130,13 +131,16 @@ export function Navigation() {
                     onClick={() => setIsOpen(false)}
                   >
                     <Link href={navItems.length > 0 ? ctaHref : "/"}>
-                      {navItems.length > 0 ? "Situation Ihres Kindes einschätzen" : "Zur Auswahl"}
+                      {navItems.length > 0
+                        ? "Situation Ihres Kindes einschätzen"
+                        : "Zur Auswahl"}
                     </Link>
                   </Button>
 
                   <div className="flex items-center justify-center space-x-6 mt-8">
                     <Link
                       href="https://instagram.com/skills4life.stories"
+                      aria-label="Skills4Life auf Instagram"
                       target="_blank"
                       className="text-[#2F3E4E] hover:text-[#1A2530]"
                     >
@@ -144,6 +148,7 @@ export function Navigation() {
                     </Link>
                     <Link
                       href="https://linkedin.com/in/diego-munizbaez"
+                      aria-label="Diego auf LinkedIn"
                       target="_blank"
                       className="text-[#4A9B7F] hover:text-[#3A8B6F]"
                     >
@@ -151,6 +156,7 @@ export function Navigation() {
                     </Link>
                     <Link
                       href="tel:+41784053830"
+                      aria-label="Anrufen: +41 78 405 38 30"
                       className="text-[#6B7FD7] hover:text-[#5B6FC7]"
                     >
                       <Phone size={24} />

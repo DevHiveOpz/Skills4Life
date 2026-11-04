@@ -30,12 +30,15 @@ export function StageTrack({ current, total = 5, className }: StageTrackProps) {
                 "size-stage-dot shrink-0 rounded-pill border-2",
                 reached && "border-success bg-success",
                 isCurrent && "border-spark bg-surface",
-                !reached && !isCurrent && "border-muted bg-surface"
+                !reached && !isCurrent && "border-muted bg-surface",
               )}
             />
             {stage < total && (
               <span
-                className={cn("h-0.5 flex-1", reached ? "bg-success" : "bg-surface-muted")}
+                className={cn(
+                  "h-0.5 flex-1",
+                  reached ? "bg-success" : "bg-surface-muted",
+                )}
               />
             )}
           </div>

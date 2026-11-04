@@ -50,8 +50,18 @@ const benefits = [
 
 const WEEKDAYS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 const MONTHS = [
-  "Januar", "Februar", "März", "April", "Mai", "Juni",
-  "Juli", "August", "September", "Oktober", "November", "Dezember"
+  "Januar",
+  "Februar",
+  "März",
+  "April",
+  "Mai",
+  "Juni",
+  "Juli",
+  "August",
+  "September",
+  "Oktober",
+  "November",
+  "Dezember",
 ];
 
 export function BookingSection() {
@@ -89,7 +99,7 @@ export function BookingSection() {
 
     try {
       const response = await fetch(
-        `/api/calendar/available-slots?date=${date.toISOString()}`
+        `/api/calendar/available-slots?date=${date.toISOString()}`,
       );
       const data = await response.json();
 
@@ -187,11 +197,15 @@ export function BookingSection() {
   };
 
   const prevMonth = () => {
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1));
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1),
+    );
   };
 
   const nextMonth = () => {
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1),
+    );
   };
 
   const days = getDaysInMonth(currentMonth);
@@ -214,8 +228,9 @@ export function BookingSection() {
                   Termin bestätigt!
                 </h2>
                 <p className="text-[#5A5A5A] mb-6">
-                  Wir haben dir eine Bestätigung an <strong>{formData.email}</strong> gesendet.
-                  Wir freuen uns auf das Gespräch mit dir!
+                  Wir haben dir eine Bestätigung an{" "}
+                  <strong>{formData.email}</strong> gesendet. Wir freuen uns auf
+                  das Gespräch mit dir!
                 </p>
                 <p className="text-sm text-[#5A5A5A]">
                   Bei Fragen erreichst du uns unter: +41 78 405 38 30
@@ -347,15 +362,18 @@ export function BookingSection() {
                     <div className="flex items-center justify-between mb-4">
                       <button
                         onClick={prevMonth}
+                        aria-label="Vorheriger Monat"
                         className="p-2 hover:bg-[#F3E8D7] rounded-lg transition-colors"
                       >
                         <ChevronLeft size={20} className="text-[#2F3E4E]" />
                       </button>
                       <span className="font-semibold text-[#2D2D2D]">
-                        {MONTHS[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+                        {MONTHS[currentMonth.getMonth()]}{" "}
+                        {currentMonth.getFullYear()}
                       </span>
                       <button
                         onClick={nextMonth}
+                        aria-label="Nächster Monat"
                         className="p-2 hover:bg-[#F3E8D7] rounded-lg transition-colors"
                       >
                         <ChevronRight size={20} className="text-[#2F3E4E]" />
@@ -380,14 +398,16 @@ export function BookingSection() {
                         <div key={index} className="aspect-square">
                           {date && (
                             <button
-                              onClick={() => !isDateDisabled(date) && setSelectedDate(date)}
+                              onClick={() =>
+                                !isDateDisabled(date) && setSelectedDate(date)
+                              }
                               disabled={isDateDisabled(date)}
                               className={`w-full h-full flex items-center justify-center text-sm rounded-lg transition-all ${
                                 isDateSelected(date)
                                   ? "bg-[#2F3E4E] text-white font-semibold"
                                   : isDateDisabled(date)
-                                  ? "text-[#C4C4C4] cursor-not-allowed"
-                                  : "text-[#2D2D2D] hover:bg-[#F3E8D7]"
+                                    ? "text-[#C4C4C4] cursor-not-allowed"
+                                    : "text-[#2D2D2D] hover:bg-[#F3E8D7]"
                               }`}
                             >
                               {date.getDate()}
@@ -403,7 +423,10 @@ export function BookingSection() {
                     {!selectedDate ? (
                       <div className="h-full flex items-center justify-center text-center p-8">
                         <div>
-                          <Clock size={48} className="mx-auto text-[#E8DCC8] mb-4" />
+                          <Clock
+                            size={48}
+                            className="mx-auto text-[#E8DCC8] mb-4"
+                          />
                           <p className="text-[#5A5A5A]">
                             Wähle zuerst ein Datum aus
                           </p>
@@ -411,7 +434,10 @@ export function BookingSection() {
                       </div>
                     ) : isLoadingSlots ? (
                       <div className="h-full flex items-center justify-center">
-                        <Loader2 size={32} className="animate-spin text-[#2F3E4E]" />
+                        <Loader2
+                          size={32}
+                          className="animate-spin text-[#2F3E4E]"
+                        />
                       </div>
                     ) : !selectedSlot ? (
                       <div>
@@ -475,7 +501,10 @@ export function BookingSection() {
                               type="text"
                               value={formData.name}
                               onChange={(e) =>
-                                setFormData({ ...formData, name: e.target.value })
+                                setFormData({
+                                  ...formData,
+                                  name: e.target.value,
+                                })
                               }
                               placeholder="Dein Name"
                               className="w-full p-2 rounded-lg border border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-1 focus:ring-[#2F3E4E] outline-none text-sm"
@@ -491,7 +520,10 @@ export function BookingSection() {
                               type="email"
                               value={formData.email}
                               onChange={(e) =>
-                                setFormData({ ...formData, email: e.target.value })
+                                setFormData({
+                                  ...formData,
+                                  email: e.target.value,
+                                })
                               }
                               placeholder="deine@email.ch"
                               className="w-full p-2 rounded-lg border border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-1 focus:ring-[#2F3E4E] outline-none text-sm"
@@ -507,7 +539,10 @@ export function BookingSection() {
                               type="tel"
                               value={formData.phone}
                               onChange={(e) =>
-                                setFormData({ ...formData, phone: e.target.value })
+                                setFormData({
+                                  ...formData,
+                                  phone: e.target.value,
+                                })
                               }
                               placeholder="079 123 45 67"
                               className="w-full p-2 rounded-lg border border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-1 focus:ring-[#2F3E4E] outline-none text-sm"
@@ -521,7 +556,10 @@ export function BookingSection() {
                             <textarea
                               value={formData.message}
                               onChange={(e) =>
-                                setFormData({ ...formData, message: e.target.value })
+                                setFormData({
+                                  ...formData,
+                                  message: e.target.value,
+                                })
                               }
                               placeholder="Gibt es etwas, das wir vorab wissen sollten?"
                               rows={2}
@@ -540,7 +578,10 @@ export function BookingSection() {
                           >
                             {isBooking ? (
                               <>
-                                <Loader2 size={18} className="mr-2 animate-spin" />
+                                <Loader2
+                                  size={18}
+                                  className="mr-2 animate-spin"
+                                />
                                 Wird gebucht...
                               </>
                             ) : (
