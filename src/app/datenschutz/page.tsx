@@ -54,6 +54,15 @@ export default function DatenschutzPage() {
               jedoch nicht dauerhaft gespeichert.
             </p>
 
+            <h3>Statistik mit Google Analytics</h3>
+            <p>
+              Nur wenn Sie im Cookie-Banner zustimmen, nutzen wir Google
+              Analytics, um zu verstehen, wie unsere Website genutzt wird. Ihre
+              Wahl können Sie jederzeit unten auf der Seite unter
+              «Cookie-Einstellungen» ändern.
+            </p>
+            <p>[TEXT GOOGLE ANALYTICS: rechtlich geprüfter Text folgt]</p>
+
             <h2>4. Ihre Rechte</h2>
             <p>
               Sie haben jederzeit das Recht auf Auskunft uber Ihre gespeicherten

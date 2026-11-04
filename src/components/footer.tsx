@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
+import { openConsentSettings } from "@/lib/analytics";
+import { consent } from "@/content/consent";
 import { Instagram, Linkedin, Phone, Mail, MapPin, Heart } from "lucide-react";
 
 export function Footer() {
@@ -153,6 +155,13 @@ export function Footer() {
             >
               Impressum
             </Link>
+            <button
+              type="button"
+              onClick={openConsentSettings}
+              className="text-small text-muted transition-colors hover:text-primary"
+            >
+              {consent.settingsLink}
+            </button>
           </div>
         </div>
       </div>
