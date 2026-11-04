@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Datenschutz | Skills4Life",
-  description: "Datenschutzerklarung von Skills4Life",
-};
+  description:
+    "Datenschutzerklärung von Skills4Life: welche Daten wir erheben, wofür wir sie nutzen und welche Rechte Sie haben.",
+  path: "/datenschutz",
+});
 
 export default function DatenschutzPage() {
   return (
