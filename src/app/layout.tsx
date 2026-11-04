@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ChatWidget } from "@/components/chat-widget";
 import { HideOnEntry } from "@/components/hide-on-entry";
+import { Analytics } from "@/components/analytics/analytics";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -51,6 +52,7 @@ export default function RootLayout({
           <Footer />
           <ChatWidget />
         </HideOnEntry>
+        <Analytics />
       </body>
     </html>
   );
