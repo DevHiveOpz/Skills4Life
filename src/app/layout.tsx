@@ -15,7 +15,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Skills4Life | Believe in yourself",
+  title: "Skills4Life | Stärken entdecken, Selbstvertrauen aufbauen",
   description:
     "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen. Für Familien, Schulen und Vereine.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Skills4Life" }],
   openGraph: {
-    title: "Skills4Life | Believe in yourself",
+    title: "Skills4Life | Stärken entdecken, Selbstvertrauen aufbauen",
     description:
       "Wir helfen Kindern, an sich zu glauben, indem wir ihre Stärken in den Mittelpunkt stellen.",
     type: "website",
