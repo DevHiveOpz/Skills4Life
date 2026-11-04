@@ -14,11 +14,15 @@ const buttonVariants = cva(
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+        // Brand variants (CLAUDE.md 4.2)
+        primary:
+          "rounded-pill bg-primary text-on-primary text-button font-semibold hover:bg-primary-hover active:bg-primary-hover focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:ring-0",
+        secondary:
+          "rounded-pill border border-primary bg-transparent text-primary text-button font-semibold hover:bg-surface focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:ring-0",
+        link:
+          "text-primary text-button font-bold hover:underline underline-offset-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:ring-0 rounded-sm",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -29,6 +33,9 @@ const buttonVariants = cva(
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
         "icon-lg": "size-10",
+        // Brand size: min. 48px high, padding 16px x 32px
+        cta: "min-h-touch px-space-5 py-space-3 [&_svg:not([class*='size-'])]:size-5",
+        inline: "min-h-touch px-0 py-0 [&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
@@ -38,10 +45,16 @@ const buttonVariants = cva(
   }
 )
 
+const brandSizes = {
+  primary: "cta",
+  secondary: "cta",
+  link: "inline",
+} as const
+
 function Button({
   className,
   variant = "default",
-  size = "default",
+  size,
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &
@@ -49,6 +62,10 @@ function Button({
     asChild?: boolean
   }) {
   const Comp = asChild ? Slot.Root : "button"
+  // Brand variants bring their own size unless one is given
+  size ??= (variant && variant in brandSizes
+    ? brandSizes[variant as keyof typeof brandSizes]
+    : "default")
 
   return (
     <Comp

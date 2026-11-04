@@ -2,14 +2,23 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+const cardVariants = {
+  default:
+    "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+  // Brand card (CLAUDE.md 4.3): surface, radius-lg, padding space-4 to space-5, no shadow
+  brand: "bg-surface text-text flex flex-col gap-space-3 rounded-lg p-space-4 md:p-space-5",
+}
+
+function Card({
+  className,
+  variant = "default",
+  ...props
+}: React.ComponentProps<"div"> & { variant?: keyof typeof cardVariants }) {
   return (
     <div
       data-slot="card"
-      className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
-        className
-      )}
+      data-variant={variant}
+      className={cn(cardVariants[variant], className)}
       {...props}
     />
   )

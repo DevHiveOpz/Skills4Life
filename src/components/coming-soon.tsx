@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/ui/logo";
 
 export function ComingSoon({ audience }: { audience: string }) {
   return (
     <section className="min-h-[100svh] bg-[#F3E8D7] flex items-center justify-center px-4 py-28">
       <div className="text-center max-w-md">
-        <Logo variant="stacked" className="text-5xl md:text-6xl mb-10" />
+        <Logo className="text-5xl md:text-6xl mb-10" />
         <h1 className="font-headline text-3xl md:text-4xl text-[#0B0B0B] mb-3">
           {audience}: bald verfügbar
         </h1>

@@ -9,7 +9,8 @@ import { HideOnEntry } from "@/components/hide-on-entry";
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
+  fallback: ["ui-rounded", "system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -40,10 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className="scroll-smooth">
-      <body
-        className={`${nunito.variable} font-sans antialiased`}
-      >
+    <html lang="de-CH" className={`${nunito.variable} scroll-smooth`}>
+      <body className="font-sans antialiased">
         <HideOnEntry>
           <Navigation />
         </HideOnEntry>

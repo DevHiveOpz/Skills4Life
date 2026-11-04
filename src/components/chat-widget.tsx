@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MountainMark } from "@/components/logo";
+import { MountainMark } from "@/components/ui/logo";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -88,7 +88,7 @@ export function ChatWidget() {
             data-chat-trigger
             className="fixed bottom-6 right-6 w-16 h-16 bg-[#2F3E4E] hover:bg-[#1A2530] shadow-xl rounded-full flex items-center justify-center z-50 transition-colors overflow-hidden border-4 border-white"
           >
-            <MountainMark className="w-8 h-auto text-white" />
+            <MountainMark variant="light" className="w-8" />
             <span className="sr-only">Chat öffnen</span>
           </motion.button>
         )}
@@ -107,7 +107,7 @@ export function ChatWidget() {
             <div className="bg-gradient-to-r from-[#2F3E4E] to-[#3D4F5F] text-white p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                  <MountainMark className="w-6 h-auto text-[#0B0B0B]" />
+                  <MountainMark className="w-6" />
                 </div>
                 <div>
                   <h3 className="font-bold text-sm">Skills4Life Chat</h3>
