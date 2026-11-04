@@ -30,6 +30,7 @@ const twMerge = extendTailwindMerge({
         "step",
         "stage-dot",
         "logo",
+        "header",
       ],
       radius: ["pill"],
       shadow: ["cta"],
