@@ -44,7 +44,10 @@ export function FloatingCTA() {
             size="lg"
             className="w-full bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full py-6 text-lg font-semibold shadow-xl"
           >
-            <Link href="#standortbestimmung" className="flex items-center justify-center space-x-2">
+            <Link
+              href="#standortbestimmung"
+              className="flex items-center justify-center space-x-2"
+            >
               <span>Situation einschätzen</span>
               <ArrowRight size={20} />
             </Link>

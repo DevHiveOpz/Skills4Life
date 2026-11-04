@@ -1,0 +1,18 @@
+# Weekly update suggestions as pull requests (CLAUDE.md 8.3).
+# Security updates additionally need "Dependabot security updates" switched on
+# in the GitHub repository settings.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

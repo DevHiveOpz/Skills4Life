@@ -21,12 +21,13 @@ function getAuth() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { start, end, name, email, phone, userType, subjects, message } = body;
+    const { start, end, name, email, phone, userType, subjects, message } =
+      body;
 
     if (!start || !end || !name || !email || !phone) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -115,11 +116,15 @@ Gebucht über skills4life.ch
                     <p style="margin: 5px 0;"><strong>Uhrzeit:</strong> ${eventTime} Uhr</p>
                     ${meetLink ? `<p style="margin: 5px 0;"><strong>Video-Link:</strong> <a href="${meetLink}">${meetLink}</a></p>` : ""}
                   </div>
-                  ${meetLink ? `
+                  ${
+                    meetLink
+                      ? `
                   <a href="${meetLink}" style="display: inline-block; background-color: #2F3E4E; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold;">
                     Zum Video-Call
                   </a>
-                  ` : ""}
+                  `
+                      : ""
+                  }
                   <p style="color: #5A5A5A; font-size: 14px; margin-top: 30px;">
                     Wir freuen uns auf das Gespräch mit dir!<br><br>
                     Bei Fragen erreichst du uns unter:<br>
@@ -152,7 +157,7 @@ Gebucht über skills4life.ch
     console.error("Calendar booking error:", error);
     return NextResponse.json(
       { error: "Failed to book appointment" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -12,7 +12,12 @@ type IconProps = {
 };
 
 // The only way to show pictograms: Lucide, line style, stroke 1.75
-export function Icon({ icon: LucideComponent, size = 24, label, className }: IconProps) {
+export function Icon({
+  icon: LucideComponent,
+  size = 24,
+  label,
+  className,
+}: IconProps) {
   return (
     <LucideComponent
       size={size}

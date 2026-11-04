@@ -44,7 +44,9 @@ export function FamilienApproach() {
                     Schritt {i + 1}
                   </span>
                 </div>
-                <h3 className="font-headline text-xl text-[#0B0B0B] mb-2">{title}</h3>
+                <h3 className="font-headline text-xl text-[#0B0B0B] mb-2">
+                  {title}
+                </h3>
                 <p className="text-[#5A5A5A] leading-relaxed">{text}</p>
               </div>
             </Reveal>

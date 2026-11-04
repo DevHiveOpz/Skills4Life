@@ -1,0 +1,10 @@
+.next
+node_modules
+.lighthouseci
+playwright-report
+test-results
+package-lock.json
+public
+*.md
+*.txt
+.claude

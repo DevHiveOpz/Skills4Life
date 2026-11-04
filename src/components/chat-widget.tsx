@@ -120,6 +120,7 @@ export function ChatWidget() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(false)}
+                aria-label="Chat schliessen"
                 className="text-white hover:bg-white/20 rounded-full"
               >
                 <X size={20} />
@@ -157,7 +158,10 @@ export function ChatWidget() {
                   className="flex justify-start"
                 >
                   <div className="bg-white text-[#2D2D2D] shadow-sm border border-[#E8DCC8] px-4 py-3 rounded-2xl rounded-bl-md">
-                    <Loader2 size={20} className="animate-spin text-[#2F3E4E]" />
+                    <Loader2
+                      size={20}
+                      className="animate-spin text-[#2F3E4E]"
+                    />
                   </div>
                 </motion.div>
               )}

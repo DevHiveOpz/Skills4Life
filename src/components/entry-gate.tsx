@@ -54,9 +54,7 @@ export function EntryGate() {
         transition={{ duration: showChoices ? 1.1 : 0.9, ease: "easeOut" }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
-        <Logo
-          className="text-[13vw] sm:text-7xl md:text-8xl"
-        />
+        <Logo className="text-[13vw] sm:text-7xl md:text-8xl" />
       </motion.div>
 
       {/* Choices */}

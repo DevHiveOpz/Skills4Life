@@ -47,10 +47,19 @@ export function Logo({
     <span
       role="img"
       aria-label="Skills4Life"
-      className={cn("inline-flex min-w-logo flex-col items-center", colors[variant], className)}
+      className={cn(
+        "inline-flex min-w-logo flex-col items-center",
+        colors[variant],
+        className,
+      )}
     >
-      <MountainMark variant={variant} className="mb-[0.18em] w-[1.7em] text-inherit" />
-      <span className="font-logo leading-none tracking-[0.02em]">SKILLS4LIFE</span>
+      <MountainMark
+        variant={variant}
+        className="mb-[0.18em] w-[1.7em] text-inherit"
+      />
+      <span className="font-logo leading-none tracking-[0.02em]">
+        SKILLS4LIFE
+      </span>
     </span>
   );
 }

@@ -22,28 +22,33 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4 text-[#2D2D2D]">Navigation</h4>
+            <h4 className="font-bold text-lg mb-4 text-[#2D2D2D]">
+              Navigation
+            </h4>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/familien"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Familien</Link>
+                  Familien
+                </Link>
               </li>
               <li>
                 <Link
                   href="/schulen"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Schulen</Link>
+                  Schulen
+                </Link>
               </li>
               <li>
                 <Link
                   href="/vereine"
                   className="text-[#5A5A5A] hover:text-[#2F3E4E] transition-colors"
                 >
-                  Vereine</Link>
+                  Vereine
+                </Link>
               </li>
               <li>
                 <Link
@@ -80,7 +85,9 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-[#2F3E4E] mt-1" />
-                <span className="text-[#5A5A5A]">Goldregenweg 32, 8050 Z&uuml;rich</span>
+                <span className="text-[#5A5A5A]">
+                  Goldregenweg 32, 8050 Z&uuml;rich
+                </span>
               </li>
             </ul>
           </div>
@@ -91,6 +98,7 @@ export function Footer() {
             <div className="flex space-x-4">
               <Link
                 href="https://instagram.com/skills4life.stories"
+                aria-label="Skills4Life auf Instagram"
                 target="_blank"
                 className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >
@@ -98,6 +106,7 @@ export function Footer() {
               </Link>
               <Link
                 href="https://linkedin.com/in/diego-munizbaez"
+                aria-label="Diego auf LinkedIn"
                 target="_blank"
                 className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >
@@ -105,6 +114,7 @@ export function Footer() {
               </Link>
               <Link
                 href="https://wa.me/41784053830"
+                aria-label="WhatsApp an Skills4Life"
                 target="_blank"
                 className="w-10 h-10 bg-[#EBE0D0] rounded-full flex items-center justify-center hover:bg-[#2F3E4E] hover:text-white text-[#2F3E4E] transition-colors"
               >

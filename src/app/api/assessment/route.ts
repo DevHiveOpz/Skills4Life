@@ -37,9 +37,7 @@ export async function POST(req: NextRequest) {
   try {
     const data: AssessmentData = await req.json();
 
-    const subjects = data.subjects
-      .map((s) => subjectLabels[s] || s)
-      .join(", ");
+    const subjects = data.subjects.map((s) => subjectLabels[s] || s).join(", ");
     const challenges = data.challenges
       .map((c) => challengeLabels[c] || c)
       .join(", ");
@@ -90,9 +88,10 @@ Wir freuen uns darauf, ${data.childName} auf dem Weg zu mehr Lernerfolg und Selb
     });
 
     const textContent = response.content.find((block) => block.type === "text");
-    const recommendation = textContent && "text" in textContent
-      ? textContent.text
-      : "Wir empfehlen ein personliches Kennenlerngesprach, um die beste Losung fur dein Kind zu finden.";
+    const recommendation =
+      textContent && "text" in textContent
+        ? textContent.text
+        : "Wir empfehlen ein personliches Kennenlerngesprach, um die beste Losung fur dein Kind zu finden.";
 
     return NextResponse.json({ recommendation });
   } catch (error) {

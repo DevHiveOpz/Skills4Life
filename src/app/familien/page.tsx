@@ -9,7 +9,8 @@ import { BookingSection } from "@/components/sections/booking";
 import { FloatingCTA } from "@/components/floating-cta";
 
 export const metadata: Metadata = {
-  title: "Skills4Life für Familien | Stärken entdecken, Selbstvertrauen aufbauen",
+  title:
+    "Skills4Life für Familien | Stärken entdecken, Selbstvertrauen aufbauen",
   description:
     "Wir entdecken die Stärken Ihres Kindes und bauen darauf Erfolge auf. So wächst Selbstvertrauen, und zuhause kehrt wieder Ruhe ein.",
 };

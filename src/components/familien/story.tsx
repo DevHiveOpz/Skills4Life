@@ -17,15 +17,17 @@ export function FamilienStory() {
         <div className="grid md:grid-cols-2 gap-6">
           <Reveal>
             <div className="h-full rounded-2xl border border-[#E8DCC8] bg-[#FAF6EF] p-7">
-              <p className="text-sm font-semibold text-[#5A5A5A] mb-2">Vorher</p>
+              <p className="text-sm font-semibold text-[#5A5A5A] mb-2">
+                Vorher
+              </p>
               <h3 className="font-headline text-xl text-[#0B0B0B] mb-3">
                 Ein Jahr Mathe-Nachhilfe
               </h3>
               <p className="text-[#5A5A5A] leading-relaxed">
                 Mathe war seine «Schwäche». Die Noten blieben knapp genügend,
-                für das Zeugnis und die Bewerbungen hat es nicht gereicht. Zuhause
-                gab es zwar weniger Diskussionen, aber das Ziel wurde nicht
-                erreicht.
+                für das Zeugnis und die Bewerbungen hat es nicht gereicht.
+                Zuhause gab es zwar weniger Diskussionen, aber das Ziel wurde
+                nicht erreicht.
               </p>
             </div>
           </Reveal>

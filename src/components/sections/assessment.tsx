@@ -121,7 +121,10 @@ export function AssessmentSection() {
 
   const totalSteps = 11;
 
-  const updateFormData = (field: keyof FormData, value: string | string[] | UserType) => {
+  const updateFormData = (
+    field: keyof FormData,
+    value: string | string[] | UserType,
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -161,7 +164,11 @@ export function AssessmentSection() {
       case 8:
         return formData.struggles.length > 0;
       case 9:
-        return formData.name.trim() !== "" && isValidEmail(formData.email) && isValidPhone(formData.phone);
+        return (
+          formData.name.trim() !== "" &&
+          isValidEmail(formData.email) &&
+          isValidPhone(formData.phone)
+        );
       case 10:
         return datenschutzAccepted;
       default:
@@ -172,9 +179,9 @@ export function AssessmentSection() {
   const generateEmpathicResponse = () => {
     const isParent = formData.userType === "parent";
     const struggles = formData.struggles;
-    const subjects = formData.subjects.map(id =>
-      subjectOptions.find(s => s.id === id)?.label || id
-    ).join(", ");
+    const subjects = formData.subjects
+      .map((id) => subjectOptions.find((s) => s.id === id)?.label || id)
+      .join(", ");
 
     // Analyze the diagnostic answers
     const needsSupport =
@@ -210,7 +217,10 @@ export function AssessmentSection() {
         response += `Dass du fast täglich helfen musst, zeigt: Das aktuelle System funktioniert nicht. Nicht weil du es falsch machst, sondern weil dein Kind noch nicht gelernt hat, selbständig zu arbeiten. Genau da setzen wir an.\n\n`;
       }
 
-      if (struggles.includes("evening-stress") || struggles.includes("relationship")) {
+      if (
+        struggles.includes("evening-stress") ||
+        struggles.includes("relationship")
+      ) {
         response += `Der Stress am Abend, die Diskussionen ums Lernen: das zermürbt. Du willst das Beste für dein Kind, aber irgendwie führt jeder Abend zum gleichen Konflikt. Das ist erschöpfend.\n\n`;
       }
 
@@ -327,7 +337,8 @@ export function AssessmentSection() {
               Lass uns gemeinsam schauen
             </h3>
             <p className="text-[#5A5A5A] mb-8 max-w-md mx-auto">
-              In wenigen Minuten verstehen wir eure Situation besser und können euch eine ehrliche Einschätzung geben.
+              In wenigen Minuten verstehen wir eure Situation besser und können
+              euch eine ehrliche Einschätzung geben.
             </p>
             <Button
               onClick={() => setStep(1)}
@@ -371,7 +382,9 @@ export function AssessmentSection() {
                   className={`mx-auto mb-4 ${formData.userType === "parent" ? "text-white" : "text-[#2F3E4E]"}`}
                 />
                 <span className="font-semibold text-lg block">Elternteil</span>
-                <span className={`text-sm ${formData.userType === "parent" ? "text-white/80" : "text-[#5A5A5A]"}`}>
+                <span
+                  className={`text-sm ${formData.userType === "parent" ? "text-white/80" : "text-[#5A5A5A]"}`}
+                >
                   Mein Kind braucht Unterstützung
                 </span>
               </button>
@@ -389,7 +402,9 @@ export function AssessmentSection() {
                   className={`mx-auto mb-4 ${formData.userType === "child" ? "text-white" : "text-[#2F3E4E]"}`}
                 />
                 <span className="font-semibold text-lg block">Schüler/in</span>
-                <span className={`text-sm ${formData.userType === "child" ? "text-white/80" : "text-[#5A5A5A]"}`}>
+                <span
+                  className={`text-sm ${formData.userType === "child" ? "text-white/80" : "text-[#5A5A5A]"}`}
+                >
                   Ich brauche selbst Hilfe
                 </span>
               </button>
@@ -409,8 +424,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? `In welchen Fächern braucht dein Kind Unterstützung?`
-                  : `In welchen Fächern brauchst du Hilfe?`
-                }
+                  : `In welchen Fächern brauchst du Hilfe?`}
               </h3>
               <p className="text-sm text-[#5A5A5A]">
                 Wähle alle aus, die zutreffen
@@ -448,8 +462,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Ist dein Kind zufrieden mit seinen Noten?"
-                  : "Bist du zufrieden mit deinen Noten?"
-                }
+                  : "Bist du zufrieden mit deinen Noten?"}
               </h3>
             </div>
 
@@ -484,8 +497,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Wie oft braucht dein Kind Hilfe beim Lernen?"
-                  : "Wie oft brauchst du Hilfe beim Lernen?"
-                }
+                  : "Wie oft brauchst du Hilfe beim Lernen?"}
               </h3>
             </div>
 
@@ -520,8 +532,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Lernt dein Kind gerne neue Themen?"
-                  : "Lernst du gerne neue Themen?"
-                }
+                  : "Lernst du gerne neue Themen?"}
               </h3>
             </div>
 
@@ -556,8 +567,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Wie selbstbewusst ist dein Kind in der Schule?"
-                  : "Wie selbstbewusst fühlst du dich in der Schule?"
-                }
+                  : "Wie selbstbewusst fühlst du dich in der Schule?"}
               </h3>
             </div>
 
@@ -592,8 +602,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Haben Lehrer Bedenken geäussert?"
-                  : "Haben deine Lehrer Bedenken geäussert?"
-                }
+                  : "Haben deine Lehrer Bedenken geäussert?"}
               </h3>
             </div>
 
@@ -617,7 +626,8 @@ export function AssessmentSection() {
         );
 
       case 8:
-        const struggles = formData.userType === "parent" ? parentStruggles : childStruggles;
+        const struggles =
+          formData.userType === "parent" ? parentStruggles : childStruggles;
         return (
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -629,8 +639,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Was belastet dich am meisten?"
-                  : "Was nervt dich am meisten?"
-                }
+                  : "Was nervt dich am meisten?"}
               </h3>
               <p className="text-sm text-[#5A5A5A]">
                 Sei ehrlich, hier urteilt niemand
@@ -683,7 +692,11 @@ export function AssessmentSection() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => updateFormData("name", e.target.value)}
-                  placeholder={formData.userType === "parent" ? "z.B. Sarah Müller" : "z.B. Tim"}
+                  placeholder={
+                    formData.userType === "parent"
+                      ? "z.B. Sarah Müller"
+                      : "z.B. Tim"
+                  }
                   className="w-full p-3 rounded-xl border border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-1 focus:ring-[#2F3E4E] outline-none"
                 />
               </div>
@@ -717,7 +730,8 @@ export function AssessmentSection() {
               </div>
 
               <p className="text-xs text-[#5A5A5A] text-center pt-2">
-                Wir behandeln deine Daten vertraulich und geben sie nicht weiter.
+                Wir behandeln deine Daten vertraulich und geben sie nicht
+                weiter.
               </p>
             </div>
           </motion.div>
@@ -735,8 +749,7 @@ export function AssessmentSection() {
               <h3 className="font-headline text-xl text-[#2D2D2D] mb-2">
                 {formData.userType === "parent"
                   ? "Möchtest du uns noch etwas mitteilen?"
-                  : "Willst du uns noch was sagen?"
-                }
+                  : "Willst du uns noch was sagen?"}
               </h3>
               <p className="text-sm text-[#5A5A5A]">
                 Optional, aber hilft uns, euch besser zu verstehen
@@ -746,9 +759,10 @@ export function AssessmentSection() {
             <Textarea
               value={formData.feelings}
               onChange={(e) => updateFormData("feelings", e.target.value)}
-              placeholder={formData.userType === "parent"
-                ? "Erzähl mir, wie es dir geht. Was hast du schon alles versucht? Was wünschst du dir?"
-                : "Wie fühlst du dich gerade mit der Schule? Was würdest du dir wünschen?"
+              placeholder={
+                formData.userType === "parent"
+                  ? "Erzähl mir, wie es dir geht. Was hast du schon alles versucht? Was wünschst du dir?"
+                  : "Wie fühlst du dich gerade mit der Schule? Was würdest du dir wünschen?"
               }
               rows={5}
               className="rounded-xl border-[#E8DCC8] focus:border-[#2F3E4E] focus:ring-[#2F3E4E]"
@@ -764,17 +778,26 @@ export function AssessmentSection() {
                   className="mt-1 h-5 w-5 rounded border-[#E8DCC8] text-[#2F3E4E] focus:ring-[#2F3E4E] shrink-0 accent-[#2F3E4E]"
                 />
                 <span className="text-sm text-[#5A5A5A] leading-relaxed">
-                  Ich bin damit einverstanden, dass meine Angaben aus diesem Formular
-                  (Name, E-Mail, Telefonnummer sowie die Antworten der Standortbestimmung)
-                  zur Bearbeitung meiner Anfrage erhoben, verarbeitet und per E-Mail an
-                  Skills4Life D. Mu&ntilde;iz Baez uebermittelt werden. Die Daten werden ausschliesslich zur
-                  Kontaktaufnahme und individuellen Beratung verwendet und nicht an Dritte
-                  weitergegeben. Ich kann diese Einwilligung jederzeit per E-Mail an{" "}
-                  <a href="mailto:skills4life.learning@gmail.com" className="text-[#2F3E4E] underline font-medium">
+                  Ich bin damit einverstanden, dass meine Angaben aus diesem
+                  Formular (Name, E-Mail, Telefonnummer sowie die Antworten der
+                  Standortbestimmung) zur Bearbeitung meiner Anfrage erhoben,
+                  verarbeitet und per E-Mail an Skills4Life D. Mu&ntilde;iz Baez
+                  uebermittelt werden. Die Daten werden ausschliesslich zur
+                  Kontaktaufnahme und individuellen Beratung verwendet und nicht
+                  an Dritte weitergegeben. Ich kann diese Einwilligung jederzeit
+                  per E-Mail an{" "}
+                  <a
+                    href="mailto:skills4life.learning@gmail.com"
+                    className="text-[#2F3E4E] underline font-medium"
+                  >
                     skills4life.learning@gmail.com
                   </a>{" "}
                   widerrufen. Es gilt die{" "}
-                  <a href="/datenschutz" target="_blank" className="text-[#2F3E4E] underline font-medium">
+                  <a
+                    href="/datenschutz"
+                    target="_blank"
+                    className="text-[#2F3E4E] underline font-medium"
+                  >
                     Datenschutzerklaerung
                   </a>
                   . *
@@ -795,7 +818,9 @@ export function AssessmentSection() {
               <CheckCircle size={40} className="text-white" />
             </div>
             <h3 className="font-headline text-2xl text-[#2D2D2D] mb-4">
-              {formData.userType === "parent" ? "Meine Einschätzung für dich" : "Meine Nachricht an dich"}
+              {formData.userType === "parent"
+                ? "Meine Einschätzung für dich"
+                : "Meine Nachricht an dich"}
             </h3>
 
             <div className="bg-[#F3E8D7] p-6 mb-8 text-left border border-[#E8DCC8] rounded-xl">
@@ -852,11 +877,7 @@ export function AssessmentSection() {
   };
 
   return (
-    <section
-      id="standortbestimmung"
-      className="py-24 bg-white"
-      ref={ref}
-    >
+    <section id="standortbestimmung" className="py-24 bg-white" ref={ref}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -887,9 +908,7 @@ export function AssessmentSection() {
                     <span>
                       Schritt {step} von {totalSteps - 1}
                     </span>
-                    <span>
-                      {Math.round((step / (totalSteps - 1)) * 100)}%
-                    </span>
+                    <span>{Math.round((step / (totalSteps - 1)) * 100)}%</span>
                   </div>
                   <div className="h-2 bg-[#EBE0D0] rounded-full overflow-hidden">
                     <motion.div
@@ -936,10 +955,7 @@ export function AssessmentSection() {
                     >
                       {isLoading ? (
                         <>
-                          <Loader2
-                            size={18}
-                            className="mr-2 animate-spin"
-                          />
+                          <Loader2 size={18} className="mr-2 animate-spin" />
                           Einen Moment...
                         </>
                       ) : (

@@ -13,9 +13,17 @@ type SectionProps = React.ComponentProps<"section"> & {
 };
 
 // One message per section: 64px padding on mobile, 96px on desktop
-export function Section({ tone = "bg", className, children, ...props }: SectionProps) {
+export function Section({
+  tone = "bg",
+  className,
+  children,
+  ...props
+}: SectionProps) {
   return (
-    <section className={cn("py-space-7 lg:py-space-8", tones[tone], className)} {...props}>
+    <section
+      className={cn("py-space-7 lg:py-space-8", tones[tone], className)}
+      {...props}
+    >
       <Container>{children}</Container>
     </section>
   );
