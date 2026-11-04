@@ -36,10 +36,6 @@ export default {
     emojis: 0,
     hex: 9,
   },
-  "src/components/familien/hero.tsx": {
-    emojis: 0,
-    hex: 13,
-  },
   "src/components/familien/recognition.tsx": {
     emojis: 0,
     hex: 5,
