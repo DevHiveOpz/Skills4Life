@@ -40,8 +40,16 @@ jobs:
       - name: Brand check (emojis, hex codes)
         run: npm run check:brand
 
+      # Downloading the Nunito font from Google Fonts fails now and then on
+      # GitHub runners, so the build gets up to three attempts.
       - name: Build
-        run: npm run build
+        run: |
+          for attempt in 1 2 3; do
+            npm run build && exit 0
+            echo "Build attempt $attempt failed, retrying"
+            sleep 10
+          done
+          exit 1
 
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
