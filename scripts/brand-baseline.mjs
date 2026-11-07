@@ -28,10 +28,6 @@ export default {
     emojis: 0,
     hex: 9,
   },
-  "src/components/familien/about.tsx": {
-    emojis: 0,
-    hex: 5,
-  },
   "src/components/familien/approach.tsx": {
     emojis: 0,
     hex: 9,

@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { ChatWidget } from "@/components/chat-widget";
+import { LazyChatWidget } from "@/components/lazy-chat-widget";
 import { HideOnEntry } from "@/components/hide-on-entry";
 import { Analytics } from "@/components/analytics/analytics";
 import { StructuredData } from "@/components/seo/structured-data";
@@ -41,7 +41,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <HideOnEntry>
           <Footer />
-          <ChatWidget />
+          <LazyChatWidget />
         </HideOnEntry>
         <Analytics />
         <StructuredData />
