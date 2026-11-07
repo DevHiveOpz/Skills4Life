@@ -3,8 +3,8 @@
 export const hero = {
   overline: "Für Familien",
   rating: "5.0 Google Bewertungen",
-  headline: "Wir helfen Kindern, an sich zu glauben.",
-  lead: "Wir entdecken die Stärken Ihres Kindes und bauen darauf Erfolge auf. So wächst Selbstvertrauen, und zuhause kehrt wieder Ruhe ein.",
+  headline: "Wir üben keine Schwächen. Wir bauen Stärken auf.",
+  lead: "Wir versprechen keine Mathenote. Ihr Kind erlebt Erfolge mit dem, was es gut kann. So wächst sein Selbstvertrauen, und zuhause kehrt wieder Ruhe ein.",
   cta: {
     label: "Situation Ihres Kindes einschätzen",
     href: "#standortbestimmung",
@@ -52,12 +52,12 @@ export const about = {
       image: "/images/team/natascha-katumba.jpg",
     },
     {
-      name: "Sarah",
+      name: "Sarah Schildknecht",
       role: "Studentin Maschinenbau, ETH Zürich",
       image: "/images/team/sarah.jpg",
     },
     {
-      name: "Til",
+      name: "Til Haumann",
       role: "Master in Chemie, ETH Zürich",
       image: "/images/team/til.jpg",
     },

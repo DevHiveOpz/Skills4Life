@@ -18,7 +18,7 @@ function PersonCard({ person }: { person: Person }) {
           person.focus,
         )}
       />
-      <div>
+      <div className="text-center">
         <p className="text-body font-bold text-text">{person.name}</p>
         <p className="text-small text-muted">{person.role}</p>
       </div>
@@ -29,7 +29,7 @@ function PersonCard({ person }: { person: Person }) {
 export function FamilienAbout() {
   return (
     <Section id="about" tone="surface">
-      <div className="mb-space-6 max-w-[65ch]">
+      <div className="mx-auto mb-space-6 max-w-[65ch] text-center">
         <p className="mb-space-3 text-overline uppercase text-muted">
           {about.overline}
         </p>
@@ -43,7 +43,9 @@ export function FamilienAbout() {
         <p className="text-body-lg text-muted">{about.teamStory}</p>
       </div>
 
-      <h3 className="mb-space-4 text-h3 text-text">{about.teamLabel}</h3>
+      <h3 className="mb-space-4 text-center text-h3 text-text">
+        {about.teamLabel}
+      </h3>
       <ScrollRow
         label={about.sliderLabel}
         previousLabel={about.previous}
@@ -54,11 +56,11 @@ export function FamilienAbout() {
         ))}
       </ScrollRow>
 
-      <h3 className="mb-space-4 mt-space-6 text-h3 text-text">
+      <h3 className="mb-space-4 mt-space-6 text-center text-h3 text-text">
         {about.supportLabel}
       </h3>
       <ul className="grid gap-space-4 sm:grid-cols-2">
-        <li className="flex items-center gap-space-4 rounded-lg bg-bg p-space-4">
+        <li className="flex flex-col items-center gap-space-3 rounded-lg bg-bg p-space-4 text-center">
           <Image
             src={about.coach.image}
             alt={`Porträt von ${about.coach.name}`}
@@ -71,7 +73,7 @@ export function FamilienAbout() {
             <p className="text-small text-muted">{about.coach.role}</p>
           </div>
         </li>
-        <li className="flex items-center gap-space-4 rounded-lg bg-bg p-space-4">
+        <li className="flex flex-col items-center gap-space-3 rounded-lg bg-bg p-space-4 text-center">
           <Image
             src={about.program.image}
             alt={about.program.alt}

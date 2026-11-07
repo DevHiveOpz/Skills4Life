@@ -72,7 +72,7 @@ export function ScrollRow({
       >
         {children}
       </ul>
-      <div className="hidden justify-end gap-space-2 md:flex">
+      <div className="hidden justify-center gap-space-2 md:flex">
         <Button
           variant="secondary"
           className="size-touch px-0"
