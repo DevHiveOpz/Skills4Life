@@ -2,7 +2,6 @@
 
 export const hero = {
   overline: "Für Familien",
-  rating: "5.0 Google Bewertungen",
   headline: "Wir üben keine Schwächen. Wir bauen Stärken auf.",
   lead: "Wir versprechen keine Mathenote. Ihr Kind erlebt Erfolge mit dem, was es gut kann. So wächst sein Selbstvertrauen, und zuhause kehrt wieder Ruhe ein.",
   cta: {
@@ -10,10 +9,42 @@ export const hero = {
     href: "#standortbestimmung",
     note: "Kostenlos · 3 Minuten",
   },
-  image: {
-    src: "/images/Diego_Muniz_15.JPG",
-    alt: "Diego, Gründer von Skills4Life, sitzt lächelnd auf einem Tisch",
-    caption: "Diego, Gründer von Skills4Life",
+  video: {
+    src: "/videos/unterricht.mp4",
+    poster: "/images/hero-unterricht.jpg",
+    alt: "Diego erklärt an der Wandtafel einen Lernschritt",
+    pause: "Video anhalten",
+    play: "Video abspielen",
+  },
+};
+
+type Review = {
+  quote: string;
+  author: string;
+};
+
+// Google-Bewertungen: Texte wörtlich übernehmen, nichts dazuschreiben.
+// Bei Jugendlichen keinen Namen nennen, nur z. B. «Schülerin».
+export const reviews = {
+  rating: "5,0 von 5 Sternen, 26 Bewertungen auf Google",
+  strip: {
+    headline: "Das schreiben Familien auf Google.",
+    sliderLabel: "Bewertungen von Familien",
+    previous: "Vorherige Bewertungen zeigen",
+    next: "Weitere Bewertungen zeigen",
+    items: [1, 2, 3, 4, 5, 6].map((n): Review => ({
+      quote: `[BEWERTUNG ${n}: kurzer Auszug aus Google]`,
+      author: "[NAME]",
+    })),
+  },
+  spotlight: {
+    overline: "Stimmen",
+    previous: "Vorherige Stimme zeigen",
+    next: "Nächste Stimme zeigen",
+    items: [1, 2, 3].map((n): Review => ({
+      quote: `[STIMME ${n}: längerer Text aus Google]`,
+      author: "[NAME]",
+    })),
   },
 };
 

@@ -22,6 +22,11 @@ const buttonVariants = cva(
         secondary:
           "rounded-pill border border-primary bg-transparent text-primary text-button font-semibold hover:bg-surface focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:ring-0",
         link: "text-primary text-button font-bold hover:underline underline-offset-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:ring-0 rounded-sm",
+        // On navy sections and on the hero video
+        onDark:
+          "rounded-pill bg-surface text-primary text-button font-semibold hover:bg-bg active:bg-bg focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-primary focus-visible:ring-0",
+        onDarkOutline:
+          "rounded-pill border border-on-primary bg-transparent text-on-primary text-button font-semibold hover:bg-primary-hover focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-primary focus-visible:ring-0",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -48,6 +53,8 @@ const brandSizes = {
   primary: "cta",
   secondary: "cta",
   link: "inline",
+  onDark: "cta",
+  onDarkOutline: "cta",
 } as const;
 
 function Button({

@@ -1,55 +1,66 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { BackgroundVideo } from "@/components/ui/background-video";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { Section } from "@/components/layout/section";
 import { hero } from "@/content/familien";
 
+// The video is portrait: full width on phones, the right side on large screens
+const mediaLayout =
+  "absolute inset-y-0 right-0 h-full w-full object-cover object-[center_42%] lg:w-3/5";
+
 export function FamilienHero() {
   return (
-    <Section id="hero" className="mt-header pt-space-5 lg:pt-space-8">
-      <div className="grid items-center gap-space-5 lg:grid-cols-[1.2fr_1fr] lg:gap-space-8">
-        <div className="text-center lg:text-left">
-          <p className="mb-space-3 text-overline uppercase text-muted">
-            {hero.overline}
-          </p>
+    <Section
+      id="hero"
+      tone="primary"
+      className="relative isolate mt-header flex min-h-[calc(100svh-var(--size-header))] items-center"
+    >
+      <Image
+        src={hero.video.poster}
+        alt={hero.video.alt}
+        fill
+        // Shaded and soon replaced by the video, so phones get a small file
+        sizes="(min-width: 1024px) 60vw, 50vw"
+        preload
+        fetchPriority="high"
+        className={`-z-30 ${mediaLayout}`}
+      />
+      <BackgroundVideo
+        src={hero.video.src}
+        pauseLabel={hero.video.pause}
+        playLabel={hero.video.play}
+        className={`-z-20 ${mediaLayout}`}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-primary/75 lg:bg-transparent lg:bg-linear-to-r lg:from-primary lg:from-40% lg:via-primary/85 lg:via-55% lg:to-primary/30"
+      />
 
-          <h1 className="mb-space-4 text-display text-text">{hero.headline}</h1>
+      <div className="mx-auto max-w-[65ch] text-center lg:mx-0 lg:w-1/2 lg:text-left">
+        <p className="mb-space-3 text-overline uppercase text-on-primary">
+          {hero.overline}
+        </p>
 
-          <p className="mx-auto mb-space-5 max-w-[65ch] text-body-lg text-muted lg:mx-0">
-            {hero.lead}
-          </p>
+        <h1 className="mb-space-4 text-display text-on-primary">
+          {hero.headline}
+        </h1>
 
-          <Button asChild variant="primary" className="shadow-cta">
-            <Link href={hero.cta.href}>
-              <span>{hero.cta.label}</span>
-              <Icon icon={ArrowRight} size={20} />
-            </Link>
-          </Button>
-          <p className="mt-space-2 text-small text-muted">{hero.cta.note}</p>
+        <p className="mb-space-5 text-body-lg text-on-primary">{hero.lead}</p>
 
-          <p className="mt-space-5 inline-flex items-center gap-space-1 rounded-pill bg-surface px-space-3 py-space-2 text-small text-text shadow-sm">
-            <Icon icon={Star} size={20} className="text-primary" />
-            <span>{hero.rating}</span>
-          </p>
-        </div>
-
-        <figure className="order-first mx-auto w-full max-w-sm lg:order-last lg:max-w-none">
-          <Image
-            src={hero.image.src}
-            alt={hero.image.alt}
-            width={2835}
-            height={1890}
-            className="aspect-video w-full rounded-lg object-cover object-[25%_center] lg:aspect-4/5"
-            sizes="(min-width: 1024px) 480px, (min-width: 640px) 384px, 100vw"
-            preload
-            fetchPriority="high"
-          />
-          <figcaption className="mt-space-2 text-small text-muted">
-            {hero.image.caption}
-          </figcaption>
-        </figure>
+        <Button
+          asChild
+          variant="onDark"
+          className="px-space-4 whitespace-normal shadow-cta sm:px-space-5"
+        >
+          <Link href={hero.cta.href}>
+            <span>{hero.cta.label}</span>
+            <Icon icon={ArrowRight} size={20} />
+          </Link>
+        </Button>
+        <p className="mt-space-2 text-small text-on-primary">{hero.cta.note}</p>
       </div>
     </Section>
   );

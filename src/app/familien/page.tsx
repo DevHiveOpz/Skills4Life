@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { FamilienHero } from "@/components/familien/hero";
+import { FamilienReviewsStrip } from "@/components/familien/reviews-strip";
+import { FamilienReviewsSpotlight } from "@/components/familien/reviews-spotlight";
 import { FamilienRecognition } from "@/components/familien/recognition";
 import { FamilienApproach } from "@/components/familien/approach";
 import { FamilienStory } from "@/components/familien/story";
@@ -20,10 +22,12 @@ export default function FamilienPage() {
   return (
     <>
       <FamilienHero />
+      <FamilienReviewsStrip />
       <FamilienRecognition />
       <FamilienApproach />
       <FamilienStory />
       <FamilienAbout />
+      <FamilienReviewsSpotlight />
       <AssessmentSection />
       <BookingSection />
       <FloatingCTA />
