@@ -19,6 +19,7 @@ import {
   Phone,
 } from "lucide-react";
 import Link from "next/link";
+import { assessmentTexts } from "@/content/assessment";
 
 type UserType = "parent" | "child" | null;
 
@@ -101,6 +102,7 @@ export function AssessmentSection() {
 
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const [result, setResult] = useState<string | null>(null);
   const [datenschutzAccepted, setDatenschutzAccepted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -290,9 +292,11 @@ export function AssessmentSection() {
   const handleSubmit = async () => {
     setIsLoading(true);
 
+    setSubmitFailed(false);
+
     // Send lead data to API
     try {
-      await fetch("/api/leads", {
+      const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -310,8 +314,13 @@ export function AssessmentSection() {
           feelings: formData.feelings,
         }),
       });
+      if (!response.ok) throw new Error(`Status ${response.status}`);
     } catch (error) {
+      // Stay on the form so the request is not lost and can be sent again
       console.error("Failed to send lead:", error);
+      setSubmitFailed(true);
+      setIsLoading(false);
+      return;
     }
 
     const empathicResponse = generateEmpathicResponse();
@@ -926,6 +935,12 @@ export function AssessmentSection() {
               {/* Step Content */}
               <AnimatePresence mode="wait">{renderStep()}</AnimatePresence>
 
+              {submitFailed && (
+                <p role="alert" className="mt-space-5 text-body text-text">
+                  {assessmentTexts.submitError}
+                </p>
+              )}
+
               {/* Navigation Buttons */}
               {step > 0 && step < totalSteps && (
                 <div className="flex justify-between mt-8 pt-6 border-t border-[#E8DCC8]">
@@ -950,7 +965,7 @@ export function AssessmentSection() {
                   ) : (
                     <Button
                       onClick={handleSubmit}
-                      disabled={isLoading}
+                      disabled={isLoading || !canProceed()}
                       className="bg-[#2F3E4E] hover:bg-[#1A2530] text-white rounded-full px-6"
                     >
                       {isLoading ? (

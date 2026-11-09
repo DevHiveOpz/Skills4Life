@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { LazyChatWidget } from "@/components/lazy-chat-widget";
 import { HideOnEntry } from "@/components/hide-on-entry";
 import { Analytics } from "@/components/analytics/analytics";
+import { InPageLinks } from "@/components/layout/in-page-links";
 import { StructuredData } from "@/components/seo/structured-data";
 import { site } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
@@ -45,6 +46,7 @@ export default function RootLayout({
         </HideOnEntry>
         <Analytics />
         <StructuredData />
+        <InPageLinks />
       </body>
     </html>
   );
