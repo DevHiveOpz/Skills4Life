@@ -74,6 +74,14 @@
 
   --container-page: var(--container-max);
 
+  --animate-marquee: marquee 80s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);

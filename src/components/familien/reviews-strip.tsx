@@ -3,13 +3,13 @@ import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
-import { ScrollRow } from "@/components/ui/scroll-row";
+import { Marquee } from "@/components/ui/marquee";
 import { reviews } from "@/content/familien";
 import { site } from "@/lib/site";
 
 export function FamilienReviewsStrip() {
   return (
-    <Section id="bewertungen">
+    <Section id="bewertungen" className="overflow-hidden">
       <div className="mb-space-5 text-center">
         <h2 className="mb-space-2 text-h2 text-text">
           {reviews.strip.headline}
@@ -26,15 +26,11 @@ export function FamilienReviewsStrip() {
         </Button>
       </div>
 
-      <ScrollRow
-        label={reviews.strip.sliderLabel}
-        previousLabel={reviews.strip.previous}
-        nextLabel={reviews.strip.next}
-      >
+      <Marquee label={reviews.strip.sliderLabel}>
         {reviews.strip.items.map((review) => (
           <li
             key={review.quote}
-            className="flex shrink-0 basis-[85%] snap-start sm:basis-[45%] lg:basis-[calc((100%-2*var(--space-4))/3)]"
+            className="flex w-[85vw] shrink-0 sm:w-[45vw] lg:w-[30vw]"
           >
             <Card variant="brand" className="w-full justify-between">
               <blockquote className="text-body text-text">
@@ -44,7 +40,7 @@ export function FamilienReviewsStrip() {
             </Card>
           </li>
         ))}
-      </ScrollRow>
+      </Marquee>
     </Section>
   );
 }

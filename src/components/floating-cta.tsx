@@ -25,6 +25,8 @@ export function FloatingCTA() {
       }
     };
 
+    // The page can already be scrolled when this loads
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

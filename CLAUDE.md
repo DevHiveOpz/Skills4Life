@@ -344,6 +344,8 @@ Zusätzlich ein einfacher Check, der den Build abbrechen lässt, wenn im Code Em
 - **Schulen und Vereine** bleiben auf der Startseite als gleichwertige Auswahl. Ihre Seiten zeigen «bald verfügbar», bis sie live gehen.
 - **Emanuele:** Die schriftliche Zustimmung der Eltern liegt vor. Nur der Vorname darf genannt werden.
 - **Logo-Intro** auf der Startseite: rund 1.5 Sekunden ist erlaubt (Ausnahme zur 200-ms-Regel). Alle anderen Animationen bleiben dezent.
+- **Hintergrund-Video** auf /familien: läuft bei allen automatisch im Loop, ohne sichtbaren Knopf, auch bei «Bewegung reduzieren».
+- **Erfolgsgeschichten** auf /familien: Die Reihe bewegt sich automatisch im Loop, auch bei «Bewegung reduzieren». Sie stoppt, solange die Maus darauf liegt.
 
 ---
 
