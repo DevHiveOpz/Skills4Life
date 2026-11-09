@@ -18,33 +18,24 @@ export const hero = {
   },
 };
 
-type Review = {
-  quote: string;
-  author: string;
-};
-
-// Google-Bewertungen: Texte wörtlich übernehmen, nichts dazuschreiben.
-// Bei Jugendlichen keinen Namen nennen, nur z. B. «Schülerin».
+// The reviews themselves come live from Google (src/lib/google-reviews.ts).
 export const reviews = {
-  rating: "5,0 von 5 Sternen, 26 Bewertungen auf Google",
+  ratingLabel: (rating: number, total: number) =>
+    `${rating.toFixed(1).replace(".", ",")} von 5 Sternen, ${total} Bewertungen auf Google`,
+  // Names as shown on Google. Reviews by children or teenagers stay off the
+  // site unless the parents have agreed in writing.
+  hiddenAuthors: ["Ajlin Rexhepi", "Isabelle Morgenthaler"],
+  spotlightCount: 3,
   strip: {
     headline: "Das schreiben Familien auf Google.",
     sliderLabel: "Bewertungen von Familien",
     previous: "Vorherige Bewertungen zeigen",
     next: "Weitere Bewertungen zeigen",
-    items: [1, 2, 3, 4, 5, 6].map((n): Review => ({
-      quote: `[BEWERTUNG ${n}: kurzer Auszug aus Google]`,
-      author: "[NAME]",
-    })),
   },
   spotlight: {
     overline: "Stimmen",
     previous: "Vorherige Stimme zeigen",
     next: "Nächste Stimme zeigen",
-    items: [1, 2, 3].map((n): Review => ({
-      quote: `[STIMME ${n}: längerer Text aus Google]`,
-      author: "[NAME]",
-    })),
   },
 };
 

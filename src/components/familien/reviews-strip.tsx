@@ -5,9 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { ScrollRow } from "@/components/ui/scroll-row";
 import { reviews } from "@/content/familien";
+import type { GoogleReviews } from "@/lib/google-reviews";
 import { site } from "@/lib/site";
 
-export function FamilienReviewsStrip() {
+export function FamilienReviewsStrip({ data }: { data: GoogleReviews }) {
   return (
     <Section id="bewertungen">
       <div className="mb-space-5 text-center">
@@ -21,7 +22,7 @@ export function FamilienReviewsStrip() {
             rel="noopener noreferrer"
           >
             <Icon icon={Star} size={20} />
-            <span>{reviews.rating}</span>
+            <span>{reviews.ratingLabel(data.rating, data.total)}</span>
           </a>
         </Button>
       </div>
@@ -31,16 +32,25 @@ export function FamilienReviewsStrip() {
         previousLabel={reviews.strip.previous}
         nextLabel={reviews.strip.next}
       >
-        {reviews.strip.items.map((review, index) => (
+        {data.items.map((review) => (
           <li
-            key={index}
+            key={review.author}
             className="flex shrink-0 basis-[85%] snap-start sm:basis-[45%] lg:basis-[calc((100%-2*var(--space-4))/3)]"
           >
             <Card variant="brand" className="w-full justify-between">
-              <blockquote className="text-body text-text">
+              <blockquote className="line-clamp-6 text-body text-text">
                 {review.quote}
               </blockquote>
-              <p className="text-small text-muted">{review.author}</p>
+              <p className="text-small text-muted">
+                <a
+                  href={review.authorUrl ?? site.googleReviews}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4"
+                >
+                  {review.author}
+                </a>
+              </p>
             </Card>
           </li>
         ))}
