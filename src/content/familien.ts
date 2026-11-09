@@ -114,7 +114,7 @@ export const about = {
     },
     {
       name: "Alilia Katumba",
-      role: "Studentin, Universität St.Gallen (HSG)",
+      role: "Studentin, Universität Genf (UNIGE)",
       image: "/images/team/alilia-katumba.jpg",
     },
     {
@@ -134,7 +134,7 @@ export const about = {
     },
     {
       name: "Seraphin",
-      role: "Physiotherapeut, ZHAW",
+      role: "Student, ZHAW",
       image: "/images/team/seraphin.jpg",
     },
   ] satisfies Person[],
