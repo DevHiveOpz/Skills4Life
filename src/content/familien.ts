@@ -18,24 +18,75 @@ export const hero = {
   },
 };
 
-// The reviews themselves come live from Google (src/lib/google-reviews.ts).
+type Review = {
+  quote: string;
+  author: string;
+};
+
+// Auszüge aus echten Google-Bewertungen, Wortlaut nicht verändern.
+// Ohne schriftliche Zustimmung der Eltern keine Namen von Kindern und
+// Jugendlichen nennen. Eltern nur mit Vorname und Initiale.
 export const reviews = {
-  ratingLabel: (rating: number, total: number) =>
-    `${rating.toFixed(1).replace(".", ",")} von 5 Sternen, ${total} Bewertungen auf Google`,
-  // Names as shown on Google. Reviews by children or teenagers stay off the
-  // site unless the parents have agreed in writing.
-  hiddenAuthors: ["Ajlin Rexhepi", "Isabelle Morgenthaler"],
-  spotlightCount: 3,
+  rating: "5,0 von 5 Sternen, 26 Bewertungen auf Google",
   strip: {
     headline: "Das schreiben Familien auf Google.",
     sliderLabel: "Bewertungen von Familien",
     previous: "Vorherige Bewertungen zeigen",
     next: "Weitere Bewertungen zeigen",
+    items: [
+      {
+        quote:
+          "Wir sind sehr dankbar, Skills4Life gefunden zu haben. … Besonders schätzen wir die flexible Terminplanung sowie die menschliche und persönliche Art, mit der die Schülerinnen und Schüler begleitet werden.",
+        author: "Gretty G., Elternteil",
+      },
+      {
+        quote:
+          "Wir haben eng zusammengearbeitet, und ich habe gelernt, dass es okay ist, Fehler zu machen – solange man sie anerkennt und daraus lernt. Diese Sicherheit hat mir geholfen, den Stoff wirklich zu durchdringen.",
+        author: "Google-Bewertung nach der FMS-Vorbereitung",
+      },
+      {
+        quote:
+          "Ich würde dich weiterempfehlen, weil du nicht nur fachlich unterstützt, sondern auch Freude am Lernen vermittelst und du unglaublich geduldig bist.",
+        author: "Patty, Elternteil",
+      },
+      {
+        quote:
+          "Dank Diegos Flexibilität und dem Online-Mathematikunterricht können wir die Lektionen genau auf seine Trainingszeiten abstimmen.",
+        author: "Jose V., Elternteil (aus dem Spanischen übersetzt)",
+      },
+      {
+        quote:
+          "Sowohl wir Eltern als auch der Lernende waren äusserst zufrieden. Wir fühlten uns jederzeit gut informiert, bestens aufgehoben & hervorragend begleitet.",
+        author: "Salih T., Elternteil",
+      },
+      {
+        quote:
+          "Ich bekomme jedes Mal ein viel besseres Verständnis für den Stoff, den ich am lernen bin, da er sehr nachvollziehbar erklärt. Ich fühle mich ausserdem sicherer bei den Prüfungen …",
+        author: "Google-Bewertung zur Prüfungsvorbereitung",
+      },
+    ] satisfies Review[],
   },
   spotlight: {
     overline: "Stimmen",
     previous: "Vorherige Stimme zeigen",
     next: "Nächste Stimme zeigen",
+    items: [
+      {
+        quote:
+          "Ich bin von Herzen dankbar für die Unterstützung, nicht nur fachlich und methodisch, sondern vor allem auch für die mentale Stärkung. Für das Ermutigen, für das Aufbauen von Selbstvertrauen. Für das Gefühl, gesehen und verstanden zu werden.",
+        author: "Manuel C., Elternteil",
+      },
+      {
+        quote:
+          "Am wichtigsten ist jedoch, an mich selbst zu glauben: dass ich es schaffen kann, dass ich gut bin, niemals aufgebe und positiv denke.",
+        author: "Emanuele",
+      },
+      {
+        quote:
+          "Diego, du hast mehr an mich geglaubt, als ich selbst an mich geglaubt habe, und mir immer wieder Mut gemacht, dass ich es schaffen werde.",
+        author: "Google-Bewertung zur Prüfungsvorbereitung",
+      },
+    ] satisfies Review[],
   },
 };
 

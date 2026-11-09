@@ -16,7 +16,6 @@ export const site = {
   },
   founder: "Diego Muñiz Baez",
   instagram: "https://instagram.com/skills4life.stories",
-  googlePlaceId: "ChIJ6x_1kvYLkEcRes7ONOSMvlk",
   googleReviews:
     "https://www.google.com/maps/place/Skills4Life+%E2%80%93Begleitung+statt+Nachhilfe/@47.410107,8.5334546,17z/data=!4m8!3m7!1s0x47900bf692f51feb:0x59be8ce434cece7a!8m2!3d47.410107!4d8.5334546!9m1!1b1!16s%2Fg%2F11vwjxt840",
 };

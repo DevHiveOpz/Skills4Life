@@ -10,8 +10,6 @@ import { FamilienAbout } from "@/components/familien/about";
 import { AssessmentSection } from "@/components/sections/assessment";
 import { BookingSection } from "@/components/sections/booking";
 import { FloatingCTA } from "@/components/floating-cta";
-import { reviews } from "@/content/familien";
-import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const metadata: Metadata = pageMetadata({
   title: "Skills4Life für Familien | Stärken und Selbstvertrauen",
@@ -20,21 +18,16 @@ export const metadata: Metadata = pageMetadata({
   path: "/familien",
 });
 
-export default async function FamilienPage() {
-  const googleReviews = await getGoogleReviews();
-  const longestReviews = googleReviews?.items
-    .toSorted((a, b) => b.quote.length - a.quote.length)
-    .slice(0, reviews.spotlightCount);
-
+export default function FamilienPage() {
   return (
     <>
       <FamilienHero />
-      {googleReviews && <FamilienReviewsStrip data={googleReviews} />}
+      <FamilienReviewsStrip />
       <FamilienRecognition />
       <FamilienApproach />
       <FamilienStory />
       <FamilienAbout />
-      {longestReviews && <FamilienReviewsSpotlight items={longestReviews} />}
+      <FamilienReviewsSpotlight />
       <AssessmentSection />
       <BookingSection />
       <FloatingCTA />

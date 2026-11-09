@@ -6,17 +6,15 @@ import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { reviews } from "@/content/familien";
-import type { GoogleReview } from "@/lib/google-reviews";
-import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const { spotlight } = reviews;
 
 // One large review at a time. It changes only when the visitor clicks. All
 // reviews share one grid cell, so the section keeps the height of the longest.
-export function FamilienReviewsSpotlight({ items }: { items: GoogleReview[] }) {
+export function FamilienReviewsSpotlight() {
   const [current, setCurrent] = useState(0);
-  const total = items.length;
+  const total = spotlight.items.length;
 
   function go(step: 1 | -1) {
     setCurrent((index) => (index + step + total) % total);
@@ -30,28 +28,20 @@ export function FamilienReviewsSpotlight({ items }: { items: GoogleReview[] }) {
         </p>
 
         <div className="grid" aria-live="polite">
-          {items.map((review, index) => (
+          {spotlight.items.map((review, index) => (
             <figure
-              key={review.author}
+              key={review.quote}
               aria-hidden={index !== current}
               className={cn(
                 "col-start-1 row-start-1 flex flex-col justify-center gap-space-4",
                 index !== current && "invisible",
               )}
             >
-              <blockquote className="line-clamp-8 text-h3 text-on-primary md:line-clamp-6">
-                {review.quote}
+              <blockquote className="text-h3 text-on-primary">
+                «{review.quote}»
               </blockquote>
               <figcaption className="text-body text-on-primary">
-                <a
-                  href={review.authorUrl ?? site.googleReviews}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tabIndex={index === current ? undefined : -1}
-                  className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-primary"
-                >
-                  {review.author}
-                </a>
+                {review.author}
               </figcaption>
             </figure>
           ))}
