@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
 
-// Long enough that the page is settled before the video starts downloading
-const START_DELAY = 3000;
+// Phones wait until the page has settled before the download starts
+const PHONE_START_DELAY = 3000;
 
 type BackgroundVideoProps = {
   src: string;
@@ -17,9 +17,9 @@ type BackgroundVideoProps = {
   className?: string;
 };
 
-// A silent looping video behind a section. It starts only after the page has
-// finished loading, so the poster image below it stays what visitors see first.
-// Visitors who prefer less motion or save data keep the still image.
+// A silent looping video behind a section. It starts by itself once the page
+// has loaded, on top of a poster image showing its first frame. The pause
+// button only appears for keyboard users.
 export function BackgroundVideo({
   src,
   pauseLabel,
@@ -32,17 +32,17 @@ export function BackgroundVideo({
   const [playing, setPlaying] = useState(true);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
     const { connection } = navigator as Navigator & {
       connection?: { saveData?: boolean };
     };
-    if (reduceMotion || connection?.saveData) return;
+    if (connection?.saveData) return;
 
     let timer: number | undefined;
     const start = () => {
-      timer = window.setTimeout(() => setActive(true), START_DELAY);
+      const delay = window.matchMedia("(min-width: 1024px)").matches
+        ? 0
+        : PHONE_START_DELAY;
+      timer = window.setTimeout(() => setActive(true), delay);
     };
     if (document.readyState === "complete") start();
     else window.addEventListener("load", start, { once: true });
@@ -87,7 +87,7 @@ export function BackgroundVideo({
       />
       <Button
         variant="onDarkOutline"
-        className="absolute bottom-space-3 left-space-3 size-touch px-0 md:left-space-4"
+        className="pointer-events-none absolute bottom-space-3 left-space-3 size-touch px-0 opacity-0 focus-visible:pointer-events-auto focus-visible:opacity-100 md:left-space-4"
         onClick={toggle}
         aria-label={playing ? pauseLabel : playLabel}
       >
