@@ -8,14 +8,6 @@ export default {
     emojis: 0,
     hex: 9,
   },
-  "src/app/datenschutz/page.tsx": {
-    emojis: 0,
-    hex: 2,
-  },
-  "src/app/impressum/page.tsx": {
-    emojis: 0,
-    hex: 2,
-  },
   "src/components/chat-widget.tsx": {
     emojis: 2,
     hex: 18,
