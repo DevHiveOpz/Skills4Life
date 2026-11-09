@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
 
+// Long enough that the page is settled before the video starts downloading
+const START_DELAY = 3000;
+
 type BackgroundVideoProps = {
   src: string;
   pauseLabel: string;
@@ -39,7 +42,7 @@ export function BackgroundVideo({
 
     let timer: number | undefined;
     const start = () => {
-      timer = window.setTimeout(() => setActive(true), 1000);
+      timer = window.setTimeout(() => setActive(true), START_DELAY);
     };
     if (document.readyState === "complete") start();
     else window.addEventListener("load", start, { once: true });
