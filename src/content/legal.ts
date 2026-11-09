@@ -21,13 +21,11 @@ export const impressum = {
   details: [
     {
       label: "Unternehmen",
-      value:
-        "Skills4Life D. Muñiz Baez\nc/o Elisabeth Baez\nHolunderweg 25b\n8050 Zürich\nSchweiz",
+      value: "Skills4Life D. Muñiz Baez\nGoldregenweg 32\n8050 Zürich\nSchweiz",
     },
     { label: "Inhaber", value: "Diego Muñiz Baez" },
     { label: "Rechtsform", value: "Einzelunternehmen" },
     { label: "Sitz", value: "Zürich" },
-    { label: "Standort", value: "Goldregenweg 32, 8050 Zürich" },
     { label: "UID", value: "CHE-482.577.118" },
     { label: "CH-ID", value: "CH-020-1101871-0" },
     { label: "EHRA-ID", value: "1688258" },
@@ -83,7 +81,7 @@ export const datenschutz = {
     {
       heading: "2. Verantwortliche Stelle",
       blocks: [
-        "Verantwortlich ist Skills4Life D. Muñiz Baez, c/o Elisabeth Baez, Holunderweg 25b, 8050 Zürich.",
+        "Verantwortlich ist Skills4Life D. Muñiz Baez, Goldregenweg 32, 8050 Zürich.",
         "Bei Fragen zum Datenschutz erreichen Sie Diego Muñiz Baez unter skills4life.learning@gmail.com oder +41 78 405 38 30.",
       ],
     },
